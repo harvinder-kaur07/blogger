@@ -1,0 +1,60 @@
+       
+     <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>-->
+  
+
+
+
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document" style=" padding-left: 70px;">
+    <div class="modal-content" style="height: 450px;rgba(23, 18, 18, 0.5);margin-top: -25px;width: 400px;border-radius: 5px;">
+      <div class="modal-header" style=" text-align: center; font-size: 20px; padding-top:20px;background-color: #ff355d;">
+        <span id="signin" style=" color: white;font-size: 23px;">WELCOME BACK!</span>
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+       </div>
+         <div class="modal-body">
+              <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+         <div id="login" style="padding-top: 32px;backgraound-color:white;">
+             <div class="field">
+                 <%= f.email_field :email, autofocus: true, placeholder: "Email", :class =>"email-login" %>
+             </div>
+         </div>
+
+         <div class="field" style="padding-top: 32px; backgraound-color:white;">
+            <%= f.password_field :password, autocomplete: "off", placeholder: "Password",:class =>"password-login" %>
+          </div>
+
+       <% if devise_mapping.rememberable? -%>
+         <div class="field" style="padding-top: 32px;">
+            <%= f.check_box :remember_me %>
+            <span style="color: black;padding-left:8px;font-size: 13px;margin-bottom: 7px;">Keep me Signed in</span>
+         </div>
+      <% end -%><br>
+ 
+
+      <div class="actions" style="text-align: center;padding-bottom: 27px;width:100%;height:40px;">
+          <%= f.submit "Sign In",:class =>"final-login"  %>
+      </div>
+     </div>
+
+   <div class="fbsign">
+           <span><a href="https://www.facebook.com/" class="btn btn-info" role="button"  style="background-color:#3a5795;color:white; border: 0px;font-size:20px;  border-radius: 4px;">facebook</a></span>
+         
+           <span> <a href="https://twitter.com/" class="btn btn-info" role="button" style="background-color: #66ccff;color:white; border: 0px; font-size:20px;  border-radius: 4px;">twitter</a></a></span>
+         </div>
+
+<% end %>
+      </div>
+     <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>-->
+    </div>
+  </div>
+</div>
+
+ 
+
+

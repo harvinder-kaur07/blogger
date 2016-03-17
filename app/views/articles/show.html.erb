@@ -1,0 +1,125 @@
+
+   
+<!-- 
+                     <%#= image_tag @article.photo.url(:medium) %>
+                      
+                    <%# @article.tags.each do |tag| %>
+                  
+                      
+                        <%#= link_to tag.name,tag_path(tag), :class =>"tag-c-show" %></span>
+                    
+                    <%# end %>
+                                                   <p><%= @article.title %><p> 
+                     
+             <%= @article.body %>
+             
+                       <%#= @article.created_at.strftime("%b %d, %Y")%>
+                   
+                       <%= link_to @article.author.user_name,author_profile_path()%>
+                  
+                     <%# if author_signed_in? && @article.author_id == current_author.id %>
+                     <%#=link_to 'Edit',edit_article_path(@article.id)%> 
+                     <%#= link_to 'Delete',article_path(@article), method: :Delete %>
+                     <%# end %>
+           
+             <%# if @article.comments.size > 0 %>
+                        
+                        <%#= render partial:'articles/comment',collection: @article.comments %>
+                       
+              <%# end %>
+            
+                      <%# if author_signed_in? %>
+                         <%#= render partial: 'comments/form' %>
+                      <%# end %>
+  <!-- <span>
+                         <p style="font-size: 15px;padding-right: 40px;"><%= (@article.comments.size) %> </p> 
+                   </span>  -->
+<div class="nav-bar-container">
+
+    <!-- BEGIN ICONS -->
+    
+  <div class="nav-user">
+     <% if author_signed_in? %>
+       <div class="user">
+           <%= link_to (image_tag current_author.photo.url(:small)), author_profile_path(current_author.id), :class =>"img-responsive"%>
+       </div><!--.user-->
+     <% end %>  
+</div>   <!-- nav-user -->
+
+</div><!--.nav-bar-container-->
+
+  <div class="content">
+
+    <div class="page-header brown full-content parallax opacity-hero" style="height: 600px; overflow: hidden">
+      <div class="parallax-bg" style="background: url('/assets/wallpaper-show.jpg') 50% 50%; background-size: cover; width: 100%; height: 100%; position: absolute; left: 0; top: 0;">
+      </div>
+
+    <div class="row">
+      <div class="col-sm-6"> </div><!--.col-->
+        <div class="col-sm-6">
+          <ol class="breadcrumb">    
+            <li><a href="<%= articles_path()%>" ><i style="color:white;font-size: 20px;"class="ion-home"></i></a></li>
+          </ol>
+        </div><!--.col-->
+      </div><!--.row-->
+    
+     <div class="row">
+      <div class="col-sm-6"> </div>
+        <div class="col-sm-6" style=" bottom: -500px; text-align: right;">
+          <ol>    
+            <li>
+              <% if author_signed_in? && @article.author_id == current_author.id %>
+                <%=link_to 'Edit',edit_article_path(@article.id), :class =>"white-color only-hover no-decor padding-10"%> 
+                <%= link_to 'Delete',article_path(@article), method: :Delete, :class =>"white-color only-hover no-decor" %>
+              <% end %>
+           </li>
+          </ol>
+        </div><!--.col-->
+      </div><!--.row-->
+    </div><!--.page-header-->
+
+  <div class="row no-padding" style=" background-color: white;">
+  <div style="padding-left:40px;padding-right:40px;">
+      <div class="col-md-5 image-row margin-top-40 margin-bottom-40">
+          <div class="col-md-12 ">
+              <%= image_tag @article.photo.url(:medium),:class =>"img-responsive img-width-set" %>
+          </div>
+      </div> <!-- col-md-5 -->    
+      <div class="col-md-7" style="padding-top: 25px;padding-right: 25px;text-align:center;  padding-left: 25px;">
+             <h1 style="font-size: 35px;"class=" margin-bottom-40">
+                <%= @article.title%>
+             </h1>
+             <div class="text-center">
+                <%= @article.body %>
+             </div>
+             <div style="text-align:right;  padding-top: 20px;">
+                <% @article.tags.each do |tag| %>
+                    <%= link_to tag.name,tag_path(tag), :class =>"tag only-hover white-color" %>
+                <% end %>
+             </div>   
+         <div style="padding-top:30px; text-align: left;">
+          <span style="font-size: 15px; font-style: italic; color: #a5a5a5;">
+               <%= @article.created_at.strftime("%b %d, %Y")%></span><span style="font-size: 15px;  color:#a5a5a5;font-style: italic;padding-left: 7px;
+               padding-right: 6px;">by</span>
+          <span style="font-style: italic;"><%= link_to @article.author.user_name,author_profile_path(@article.author.id), :class =>"text-color only-hover"%></span>  
+        </div><!--.col-->
+      </div><!--.col-->
+    </div>  
+  </div><!--.row-->
+   
+  <div class="container no-padding">
+    <div class="full-content bg-white margin-top-40">
+      <div class="row">
+        <div class="col-md-12" style=" padding-left: 40px;padding-right: 40px;">
+              <% if author_signed_in? %>
+                         <%= render partial: 'comments/form' %>
+              <% end %>
+
+            <% if @article.comments.size > 0 %>       
+
+                        <%= render partial:'articles/comment',collection: @article.comments %>
+             <% end %>
+       </div>
+     </div>
+   </div>
+</div>

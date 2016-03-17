@@ -1,0 +1,68 @@
+
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+
+
+    <div class="container" >
+    <div class="row" style="background-color: white;padding-left: 40px;padding-right: 40px;    margin-right: 20px;">
+      <div class="col-md-12">
+
+        <div class="input-group">
+           <div class="inputer floating-label">
+              <div class="input-wrapper">
+                <%= f.email_field :email, autofocus: true, :class =>"form-control", :id=>"exampleInput1"%>
+                <label for="exampleInput1">Email-id</label>
+              </div>
+            </div>
+         </div> 
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+           <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+          <% end %>
+         <div class="input-group">
+            <div class="inputer floating-label">
+               <div class="input-wrapper">
+                  <%= f.password_field :password, autocomplete: "off", :class =>"form-control", :id=>"exampleInput1" %>
+                  <label for="exampleInput1">Password</label>
+               </div>
+            </div>
+         </div> 
+          <div class="input-group">
+            <div class="inputer floating-label">
+               <div class="input-wrapper">
+                  <%= f.password_field :password_confirmation, autocomplete: "off",  :class =>"form-control", :id=>"exampleInput1" %>
+                  <label for="exampleInput1">Repeat password</label>
+               </div>
+            </div>
+         </div> 
+
+ 
+
+  <div class="input-group">
+            <div class="inputer floating-label">
+               <div class="input-wrapper">
+                  <%= f.password_field :current_password, autocomplete: "off",  :class =>"form-control", :id=>"exampleInput1" %>
+                  <label for="exampleInput1">Current Password</label>
+               </div>
+            </div>
+     </div> <br>
+    <div class="field"> 
+           <%= f.file_field :photo, :class =>"pic-upload btn btn-default btn-file" %>
+     </div><br>
+<center>
+  <div class="actions" style="padding-bottom: 20px;">
+    <%= f.submit "Update" ,:class =>" button-edit"%>
+  </div>
+  </center>
+<% end %>
+
+<div style="text-align: center;background-color: #ff355d;padding-bottom: 20px;padding-top: 20px;margin-bottom: 30px;">
+<center style="display: inline-flex;"> 
+  <span style="color: white;padding-right: 20px;">Unhappy?</span>
+  <span> <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete ,:class =>"account-cancel" %></span>
+</center>
+</div>
+
+</div>
+</div>
+</div>

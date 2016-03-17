@@ -1,0 +1,67 @@
+
+ <%= form_for(@article, html: {multipart: true}) do |f| %>
+  <% @article.errors.full_messages.each do |error| %>
+  <%= error %>
+  <% end %>
+ <div class="container" style=" padding-top: 50px;">
+   <div class="row">
+      <div class="col-sm-6"></div><!--.col-->
+         <div class="col-sm-6"style=" text-align: right;">
+           <a href="<%= articles_path()%>" >
+               <div style="color: #ff355d;font-size: 20px;"class="ion-home"></div>
+           </a> 
+         </div><!--.col-->
+       </div><!--.row-->
+
+    <div class="row" style="background-color: white;padding-left: 40px;padding-right: 40px;    margin-right: 20px;">
+      <div class="col-md-12">
+       <div style="text-align:center;padding-top: 25px;"><h3>Edit Your Story</h3></div>
+          <div class="input-group">
+            <div class="inputer floating-label">
+               <div class="input-wrapper">
+                  <%= f.text_field :title, :class =>"form-control", :id=>"exampleInput1" %>
+                  <label for="exampleInput1">Title</label>
+               </div>
+            </div>
+         </div> 
+         <div class="input-group">
+            <div class="inputer floating-label">
+               <div class="input-wrapper">
+                  <%= f.text_area :body,:class =>"form-control", :id=>"exampleInput1" %>        
+                  <label for="exampleInput1">What's On Your MInd </label>
+               </div>
+            </div>
+         </div> 
+          <div class="input-group">
+            <div class="inputer floating-label">
+               <div class="input-wrapper">
+                  <%= f.text_field :tag_list,:class =>"form-control", :id=>"exampleInput1"%>
+                   <label for="exampleInput1">Tag-List</label>
+               </div>
+            </div>
+         </div> 
+
+                  <% if author_signed_in? %> 
+                   <%= f.hidden_field :author_id, :value => current_author.id, :class =>"form-control", :id=>"exampleInput1" %>
+                  <% end %>
+
+         <div class="input-group">
+            <div class="inputer floating-label">
+               <div class="input-wrapper">
+                  <%= f.file_field :photo %>
+                 </div>
+            </div>
+         </div> 
+  
+         <div class="input-group" style="text-align:center;padding-top: 20px;padding-bottom: 20px;">
+                 <%= f.submit "PUBLISH",:class =>"button-edit" %>
+         </div>
+
+        </div>
+      </div>
+    </div>
+
+       
+    <% end %>
+
+

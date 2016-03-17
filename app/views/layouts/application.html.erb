@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blogger</title>
+  <!DOCTYPE html>
+<html>
+<head>
+  <title>Themeblogger</title>
+  <% if author_signed_in? %>
+      <%= stylesheet_link_tag    'application', media: 'all' %>
+  <% else %>
+   <%= stylesheet_link_tag    'application_frontend', media: 'all' %>
+   <% end %>
+  <%= javascript_include_tag 'application' %>
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+  <%= csrf_meta_tags %>
+   
+
+</head>
+<body>
+
+<%= render 'devise/sessions/new' %>
+<!-- 
+           <% if author_signed_in? %>
+              <div class="chip">
+                   <%= image_tag current_author.photo.url(:small)%>
+                   <%= link_to current_author.user_name, author_profile_path(current_author.id)%>
+               </div>
+             <% end %>
+
+             
+              <% if author_signed_in? %>
+                <%= link_to "Sign out", destroy_author_session_path() %>
+             <% else %>
+             <%= link_to "SIGN IN",new_author_session_path() %>
+             <%= link_to "SIGN UP", new_author_registration_path() %>  
+            <% end %>   -->
+
+    
+
+
+
+<%= yield %>
+<% if author_signed_in? %>
+        <%= javascript_include_tag 'application_postyield' %>
+
+<% else %>
+        <%= javascript_include_tag 'application_frontend' %>
+       
+<% end%>
+
+ 
+
+</body>
+</html>
+
+ 
+      
+
+ <!--<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+       <button type="button" class="btn btn-lg btn-info collapsed" data-toggle="collapse" data-target="#demo">GRAB</button>
+         <div id="demo" class="collapse">
+            <ul>
+              <p>SHOP</p>
+              <p>FEED</p>
+              <p>CONTEST</p>
+              <p>CELEBS</p>
+              <p>ABOUT US</p>
+              <p>CONTACT US</p>
+            </ul>
+         </div>
+     </div>
+
+ 
+
+ <div class="col-md-8 posts">-->
+
+<!--</div>
+</div>
+</div>-->
+
+
+  

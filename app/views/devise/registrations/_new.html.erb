@@ -1,0 +1,77 @@
+
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= devise_error_messages! %>
+
+<div class="container">
+<div class="row">
+        <div class="col-md-6 col-xs-12">
+          <div class="form-group">
+             <div class="inputer floating-label">
+                 <div class="input-wrapper">
+                       <%= f.text_field :user_name,:Class=>"form-control", :type =>"text", :id => "exampleInput1" %>
+                    <label for="exampleInput1">User Name</label>
+                 </div>
+              </div>
+           </div><!--.form-group-->
+        </div><!--.col-->
+         <div class="col-md-6 col-xs-12">
+          <div class="form-group">
+             <div class="inputer floating-label">
+                 <div class="input-wrapper">
+                          <%= f.email_field :email, autofocus: true,:class => "form-control", :id => "exampleInput1"  %>
+                    <label for="exampleInput1">Email Address</label>
+                 </div>
+              </div>
+           </div><!--.form-group-->
+        </div><!--.col--> 
+ </div>
+<div class="row">
+        <div class="col-md-6 col-xs-12">
+          <div class="form-group">
+             <div class="inputer floating-label">
+                 <div class="input-wrapper">
+                        <%= f.password_field :password, autocomplete: "off", :id => "exampleInput1" ,:class => "form-control"  %>
+                    <label for="exampleInput1">Password</label>
+                 </div>
+              </div>
+           </div><!--.form-group-->
+        </div><!--.col-->
+         <div class="col-md-6 col-xs-12">
+          <div class="form-group">
+             <div class="inputer floating-label">
+                 <div class="input-wrapper">
+                      <%= f.password_field :password_confirmation, autocomplete: "off",:class => "form-control", :id => "exampleInput1"   %>
+                    <label for="exampleInput1">Confirm Password</label>
+                 </div>
+              </div>
+           </div><!--.form-group-->
+        </div><!--.col--> 
+    </div>    
+    <div class="row">
+        <div class="col-md-6 col-xs-12">
+          <div class="form-group">
+             <div class="inputer floating-label">
+                 <div class="input-wrapper">
+                    <%= f.file_field :photo ,:class => "form-control", :id => "exampleInput1" %>
+
+                 </div>
+              </div>
+           </div><!--.form-group-->
+        </div><!--.col--> 
+        
+      </div>  
+        <div class="row">
+           <div class="form-group" style="padding-right: 12px;">
+              <%= f.submit "SIGN UP", :class => " background-color no-hover btn btn-success pull-right btn-default toastr-notify" %>
+           </div><!--.form-buttons-->
+         </div>  
+
+ </div>
+
+
+ 
+</div>
+
+
+<% end %>

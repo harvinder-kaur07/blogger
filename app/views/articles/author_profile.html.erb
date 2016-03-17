@@ -1,0 +1,166 @@
+
+
+
+  <div class="content">
+   <div class="page-header full-content parallax" style="height: 600px; overflow: hidden">
+    <div class="parallax-bg" style="background: url('/assets/new9.jpg') 50% 50%; background-size: cover; width: 100%; height: 100%; position: absolute; left: 0; top: 0;">
+      </div>
+      <div class="profile-info">
+   <div class="profile-photo">
+            <%= image_tag @author.photo.url(:small), :class =>"img-responsive"%>
+        </div><!--.profile-photo-->
+         <div class="profile-text light profile-author" style=" padding-top: 10px;">
+            <%= link_to @author.user_name, author_profile_path(@author.id), :class =>"white-color no-decor"%>
+         </div><!--.profile-text-->
+       </div><!--.profile-info-->
+
+       <div class="row">
+         <div class="col-sm-6">
+         </div><!--.col-->
+        <div class="col-sm-6">
+          <ol class="breadcrumb">
+             <li><a href="<%= articles_path()%>" ><i style="color: #ff355d;font-size: 20px;"class="ion-home"></i></a></li>
+           </ol>
+         </div><!--.col-->
+       </div><!--.row-->
+       <div class="header-tabs scrollable-tabs sticky">
+         <ul class="nav nav-tabs tabs-active-text-white tabs-active-border-yellow">
+          <li class="active"><a href="#timeline" data-toggle="tab" class="btn-ripple">Timeline</a></li>
+           <li><a href="#about" data-toggle="tab" class="btn-ripple">About</a></li>
+           <li><a href="#photos" data-toggle="tab" class="btn-ripple">Photos</a></li>
+            <% if author_signed_in? && @article.author_id == current_author.id %>
+           <li><a href="#edit" data-toggle="tab" class="btn-ripple">Edit Profile</a></li>
+           <% end%>
+         </ul>
+      </div>
+
+
+     </div><!--.page-header-->
+   
+    <div class="row user-profile" style=" padding-left: 40px; padding-right: 40px;">
+      <div class="col-md-12" style="padding-left:10px">
+        <div class="tab-content without-border">
+          <div id="timeline" class="tab-pane active">
+            <div class="row masonry">
+
+      
+                 <% @author.articles.each do |article| %>
+                    <div class="col-md-4 col-sm-4 col-xs-6" style="padding-bottom:8px;padding-right: 4px;padding-left: 4px;">
+                       <div class="card card-user-new">
+                       <%= image_tag article.photo.url(:medium), :class =>"img-responsive index-image"%>
+                         <div class="card-body">
+                           <h5 ><%= link_to article.title , article_path(article.id), :class =>"t-color no-decor" %></h5>
+                           <h6 style="color: white;font-size: 15px;">comments <%= (@article.comments.size) %></h6>
+                           <ul class="social-links list-inline"style="color: white;font-size: 12px;">
+                              <li><%= article.created_at.strftime("%b %d, %Y")%></li>
+                          </ul>
+                       </div><!--.card-body-->
+                     </div><!--.card-->
+                   </div><!--.col-md-4-->          
+                 <%end %>
+        
+            </div><!--.row-->
+
+          </div><!--#timeline.tab-pane-->
+
+          <div id="about" class="tab-pane">
+            <div class="row">
+              <div class="col-md-3">
+                <ul class="nav nav-tabs borderless vertical">
+                  <li class="active"><a href="#about_overview" data-toggle="tab">Overview</a></li>
+                  <li><a href="#about_timeline" data-toggle="tab">Timeline</a></li>
+                </ul>
+              </div><!--.col-md-3-->
+              <div class="col-md-9">
+                <div class="tab-content">
+
+                  <div class="tab-pane active" id="about_overview">
+                    <div class="legend">Contact Information</div>
+                    <div class="row">
+                      <div class="col-md-3">Email</div><!--.col-md-3-->
+                      <div class="col-md-9"> <%= @author.email %></div><!--.col-md-9-->
+                    </div><!--.row-->
+                    <div class="row">
+                      <div class="col-md-3">Mobile Phones</div><!--.col-md-3-->
+                      <div class="col-md-9">NIL</div><!--.col-md-9-->
+                    </div><!--.row-->
+                    <div class="row">
+                      <div class="col-md-3">Address</div><!--.col-md-3-->
+                      <div class="col-md-9">NIL </div><!--.col-md-9-->
+                    </div><!--.row-->
+                    <div class="row">
+                      <div class="col-md-3">Website</div><!--.col-md-3-->
+                      <div class="col-md-9">NIL</div><!--.col-md-9-->
+                    </div><!--.row-->
+                    
+                  
+                  </div><!--#about_overview.tab-pane-->
+
+                  <div class="tab-pane" id="about_timeline">
+                    <div class="timeline single">
+
+                    <% @author.articles.each do |article| %>
+                     <div class="frame">
+                           <div class="timeline-badge">
+                               <i class="fa fa-headphones"></i>
+                           </div><!--.timeline-badge-->
+                        <span class="timeline-date"> <%= article.created_at.strftime("%b %d, %Y")%>
+                        </span>
+                         <span class="text-color right-align" style=" display: inherit;    font-size: 14px;">
+                              <% if author_signed_in? && @article.author_id == current_author.id %>
+                                <%=link_to 'Edit',edit_article_path(@article.id), :class =>"text-color only-hover no-decor padding-10"%> 
+                                <%= link_to 'Delete',article_path(@article), method: :Delete, :class =>"text-color only-hover no-decor" %>
+                               <% end %>
+                         </span> 
+                          <div class="timeline-content">
+                          <p> <%= article.body %></p>
+                          </div><!--.timeline-content-->
+                     </div><!--.frame-->
+                     <% end %>
+                    </div><!--.timeline-->
+
+                  </div><!--#about_timeline.tab-pane-->
+
+                </div><!--.tab-content-->
+
+              </div><!--.col-md-9-->
+            </div><!--.row-->
+          </div><!--#about.tab-pane-->
+
+          <div id="photos" class="tab-pane">
+             <div class="row image-row">
+               <% @author.articles.each do |article| %>
+                 <div class="col-md-3 col-sm-3 col-xs-2" style="padding-bottom:8px;padding-right: 4px;padding-left: 4px;">
+                    <div class="card card-user-new">
+                      <%= image_tag article.photo.url(:medium), :class =>"img-responsive index-image"%>
+                      <div>
+                        <div class="card-body">
+                          <h6 class="no-decor" style="color: white;left: 100px;!important; font-size: 18px;font-weight: 400;"><%= link_to "VIEW",article_path(article.id) %></h6>
+                       </div><!--.card-body-->
+                       </div>
+                     </div><!--.card-->
+                   </div><!--.col-md-4-->     
+                  <%end %>
+           </div><!--.col-->
+        </div><!--#photos.tab-pane-->
+          <% if author_signed_in? && @article.author_id == current_author.id %>
+          <div id="edit" class="tab-pane" style=" padding-left: 5px;">
+            <div class="row">
+              <%= render partial: 'devise/registrations/edit' %>  
+          </div><!--#about.tab-pane-->
+         </div> 
+         <% else %>
+         <% end %>
+
+
+
+        </div><!--.tab-content-->
+      </div><!--.col-->
+    </div><!--.row-->
+
+
+
+
+  </div><!--.content-->
+
+ 

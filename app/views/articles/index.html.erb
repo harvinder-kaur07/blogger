@@ -1,0 +1,639 @@
+<!-- 
+        <%#if author_signed_in? %>
+             <%#= link_to "HERE WE GO!!", new_article_path() %>
+        <%# else %>
+             <%#= link_to "HERE WE GO!!", "#login", "data-toggle" => "modal" %></p>
+        <%# end  %>
+     
+
+<div class="container"> 
+  <div class="row ">
+    <div class="index-row">
+      <div class="col-md-3 col-xs-12 ">
+           <%# @articles.each do |article| %>
+           <%#= link_to article.title, article_path(article.id)%><br>
+           <% #end %>
+      </div>
+
+        
+        </div> 
+      </div>
+   </div>
+ </div>
+ <div>
+ 	<p>
+     </p>
+
+ </div>
+<table>
+
+          <%# @articles.each do |article| %>
+            <td><%#= image_tag article.photo.url(:medium)%></td>
+                 <td> <%#= article.title %><td>
+                 <td> <%#= article.author.user_name%><td>
+                  <td><%#= article.created_at.strftime("%b %d, %Y")%><td>
+             <%# end %>
+       </table>  
+      -->
+    
+<% if author_signed_in? %>
+<div class="nav-bar-container">
+
+    <!-- BEGIN ICONS -->
+    
+  <div class="nav-user">
+     <% if author_signed_in? %>
+       <div class="user">
+           <%= link_to (image_tag current_author.photo.url(:small)), author_profile_path(current_author.id), :class =>"img-responsive"%>
+       </div><!--.user-->
+     <% end %>  
+</div>   <!-- nav-user -->
+
+</div><!--.nav-bar-container-->
+
+ 
+  <div class="content">
+
+    <div class="page-header full-content navbar-fixed-top">
+      <div class="row">
+        <div class="col-sm-6" style="padding-left: 30px;">
+          <span style=" color: white;font-size: 22px;padding-left: 18px ;   padding-right: 12px;
+           letter-spacing: 2px;">VOGUE PARADIZE</span><span style="color: rgba(255, 255, 255, 0.71);font-size: 18px;letter-spacing: 0px;">Fashion blogger </span>
+        </div><!--.col-->
+        <div class="col-sm-6" style="padding-right: 54px;">
+          <ol class="breadcrumb">
+            
+            <% if author_signed_in? %>
+                <%= link_to current_author.user_name, author_profile_path(current_author.id) %>
+              
+             <% end %>
+             <% if author_signed_in? %>
+                <%= link_to "Sign out", destroy_author_session_path(), :method => :delete ,:class =>"name-index"%>
+             <% else %>
+             <%= link_to "SIGN UP", new_author_registration_path(),:class =>"sign name-index" %>  
+            <% end %>  
+
+          </ol>
+        </div><!--.col-->
+      </div><!--.row-->
+    </div><!--.page-header-->
+ 
+    <div class="row" style=" padding-left: 40px; padding-right: 40px; padding-bottom: 25px;  margin-top: -22px;">
+      <div class="col-md-6 col-sm-12">
+        <div class="card card-event card-clickable" style=" padding-bottom: 109px;">
+
+          <div class="card-heading bg-image sample-bg-image13">
+          </div><!--.card-heading-->
+
+          <div class="card-body">
+            <div class="calendar" style="width: 82px;">
+              <div class="month">Since</div>
+              <div class="date">2013</div>
+            </div><!--.calendar-->
+            <div style=" display: inline-flex;">
+            <span style="font-size: 20px;color: #ff355d;">Emma Watson</span><span style=" font-size: 13px;padding-top: 8px;padding-left: 10px;color: #353131;">AMBASSADOR</span>
+            </div>
+            <p>Emma Charlotte Duerre Watson is a British actress, model, and activist. Watson rose to prominence as Hermione Granger in the Harry Potter film series, appearing in all eight Harry Potter films from 2001 to 2011, previously having acted only in school plays.</p>
+          </div><!--.card-body-->
+
+          <div class="clickable-button">
+            <div class="layer bg-red"></div>
+            <a class="btn btn-floating btn-red initial-position floating-open"><i class="ion-android-more-horizontal"></i></a>
+          </div>
+
+          <div class="layered-content bg-red">
+            <div class="overflow-content">
+              <p>Watson was born in Paris, France, the daughter of English lawyers Jacqueline Luesby and Chris Watson. Watson lived in Paris until the age of five. Her parents separated when she was young; following their divorce, Watson moved back to England to live with her mother in Oxfordshire while spending weekends at her father's house in London.Watson has stated that she speaks some French, though "not as well" as she used to. After moving to Oxford with her mother and brother, she attended the Dragon School in Oxford, remaining there until 2003.From the age of six, she wanted to become an actress,and trained at the Oxford branch of Stagecoach Theatre Arts, a part-time theatre school where she studied singing, dancing, and acting.</p>
+            </div><!--.overflow-content-->
+            <div class="clickable-close-button">
+              <a class="btn btn-floating initial-position floating-close"><i class="ion-android-close"></i></a>
+            </div>
+          </div>
+
+        </div><!--.card-->
+      </div><!--.col-md-6-->
+
+      <div class="col-md-6 col-sm-12">
+        <div class="card card-event card-clickable card-clickable-from-left">
+
+          <div class="card-heading bg-image sample-bg-image15">
+          </div><!--.card-heading-->
+
+          <div class="card-body">
+            <div class="calendar"  style="width: 82px;">
+              <div class="month">Since</div>
+              <div class="date">2012</div>
+            </div><!--.calendar-->
+            <div style=" display: inline-flex;">
+            <span style="font-size: 20px;color: #ff355d;">Selena Gomez</span><span style=" font-size: 13px;padding-top: 8px;padding-left: 10px;color: #353131;">AMBASSADOR</span>
+            </div>
+            <p>Selena Marie Gomez is an American singer and actress. Born and raised in Grand Prairie, Texas, she was first featured on the children's series Barney & Friends.Gomez entered the film industry with star billings in feature films including Ramona and Beezus  </p>
+          </div><!--.card-body-->
+
+          <div class="clickable-button">
+            <div class="layer bg-teal"></div>
+            <a class="btn btn-floating btn-teal initial-position floating-open"><i class="ion-android-more-horizontal"></i></a>
+          </div>
+
+          <div class="layered-content bg-teal">
+            <div class="overflow-content">
+              <h4>Young Professionals London</h4>
+              <p>Selena Marie Gomez was born in Grand Prairie, Texas on July 22, 1992,[5] to Ricardo Joel Gomez and former stage actress Amanda Dawn "Mandy" Cornett.[6][7][8] Gomez was named after Tejano singer Selena Quintanilla-Perez.[9] Her father is of Mexican descent while her mother, who was adopted, has some Italian ancestry.[10][11][12] Regarding her Hispanic heritage, Gomez has stated, "My family does have Quinceañeras, and we go to the communion church. We do everything that's Catholic, but we don't really have anything traditional except [that we] go to the park and have barbecues on Sundays after church."[13] Gomez's parents divorced when she was five years old, and she remained with her mother.[6][14] Gomez has two siblings. Her sister, Gracie Elliot Teefey, was born to Amanda and her second husband Brian Teefey on June 12, 2013.[15][16] Gomez has a second sister, Victoria Gomez, born to Ricardo and his wife Sara on June 25, 2014.[17] She earned a high school diploma through homeschooling in May 2010.[18]</p>
+            </div><!--.overflow-content-->
+            <div class="clickable-close-button">
+              <a class="btn btn-floating initial-position floating-close"><i class="ion-android-close"></i></a>
+            </div>
+          </div>
+
+        </div><!--.card-->
+      </div><!--.col-md-6-->
+    </div><!--.row-->
+<div class="row" style=" padding-left: 40px; padding-right: 40px;padding-bottom: 15px;   margin-top: -22px;">
+      <div class="col-md-4 col-sm-12">
+        <div class="card card-quote card-black bg-image bg-opaque5 sample-bg-image9">
+
+          <div class="card-body text-color-white">
+            <div class="quote">
+              <i class="fa fa-quote-left"></i>
+              <p>Try to make all your work look like something Apple would do.</p>
+              <i class="fa fa-quote-right"></i>
+            </div><!--.quote-->
+            <p class="author">Ben Garratt</p>
+          </div><!--.card-body-->
+
+        </div><!--.card-->
+      </div><!--.col-md-4-->
+
+     <!--  <div class="col-md-4">
+        <div class="card card-quote card-indigo bg-image bg-opaque8 sample-bg-image10">
+
+          <div class="card-body text-color-white">
+            <div class="quote">
+              <i class="fa fa-quote-left"></i>
+              <p style="color:#ff355d!important;"> <%#if author_signed_in? %>
+             <%#= link_to "Publish your Story ", new_article_path(), :class =>"new-arti" %>
+             <%# else %><p>Make an iOS weather app. Because you can never have enough!</p>
+             <%# end %></p>
+              <i class="fa fa-quote-right"></i>
+            </div><!.quote-->
+            <!-- <p class="author">Frida Ekman</p> -->
+          <!-- </div> --><!--.card-body-->
+
+<!--         </div>.card
+      </div><! -->
+
+      <div class="col-md-4  col-sm-12">
+        <div class="card card-quote card-black bg-image bg-opaque5 sample-bg-image10"style=" height: 180px;">
+
+          <div class="card-body text-color-white">
+            <div class="quote">
+              <i class="fa fa-quote-left"></i>
+              <p>Make an iOS weather app. Because you can never have enough!</p>
+              <i class="fa fa-quote-right"></i>
+            </div><!--.quote-->
+            <p class="author">Frida Ekman</p>
+          </div><!--.card-body-->
+
+        </div><!--.card-->
+      </div><!--.col-md-4-->
+      <div class="col-md-4 col-sm-12">
+        <div class="card card-quote card-red bg-image bg-opaque7 sample-bg-image11">
+
+          <div class="card-body text-color-white">
+            <div class="quote">
+              <i class="fa fa-quote-left"></i>
+              <p>Take an angled photo of your screen. All the cool kids do it.</p>
+              <i class="fa fa-quote-right"></i>
+            </div><!--.quote-->
+            <p class="author">Fredrik Wahlgren</p>
+          </div><!--.card-body-->
+
+        </div><!--.card-->
+      </div><!--.col-md-4-->
+    </div><!--.row-->
+
+       <div class="row no-gutters" style="     padding-top: 30px;padding-left: 36px;padding-right: 40px;margin-top: -40px;">
+       <div class="col-md-8"> 
+           <div class="col-sm-4 col-sm-12 col-xs-12"style="padding-right: 4px;padding-left: 4px;padding-bottom:4px;">
+               <div class="card card-user-new"> 
+                  <img src="/assets/color-img.png" style=" height:239px;width: 100%;">
+                  <div class="card-body" >
+                    <div class="only-hover white-color" style="    padding-top: 50px;text-align:center; padding-left: 0px;font-size: 20px;text-transform: uppercase;">
+                    <div class="glyphicon glyphicon-plus plus"></div>
+                    <div>
+                    <% if author_signed_in? %>
+                    <%= link_to "Publish your Story ", new_article_path(), :class =>"only-hover white-color no-decor" %>
+                    <% else %>
+                    <%= link_to "Publish your Story ",new_author_session_path(), :class =>"only-hover white-color no-decor" %>
+                    <%end%>
+                    </div>
+                    </div>  
+                  </div><!--.card-body-->
+                </div><!--.card-->
+              </div><!--.col-md-3-->
+          <% @articles.each do |article| %>
+              <div class="col-md-4 col-sm-4 col-xs-6 " style="padding-bottom:8px;padding-right: 4px;padding-left: 4px;">
+                <div class="card card-user-new">
+                   <%= image_tag article.photo.url(:medium), :class =>"img-responsive index-image"%>
+                  <div class="card-body">
+                    <h5 ><%= link_to article.title , article_path(article.id), :class =>"t-color" %></h5>
+                    <h6><%= article.author.user_name%></h6>
+                    <ul class="social-links list-inline">
+                      <li><a href="#"><i class="fa fa-github"></i></a></li>
+                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                  </div><!--.card-body-->
+                </div><!--.card-->
+              </div><!--.col-md-3-->
+    <%end %>
+    </div>
+
+  
+<div class="col-md-4" style="  padding-left:4px;padding-bottom: 8px;" >  
+ 
+    <div class=" col-md-12 card card-user-new" style="margin-bottom: 8px;"> 
+                  <img src="/assets/color-img.png" style=" height:100px;width: 100%;">
+                  <div class="card-body only-hover" >
+                    <div class="only-hover white-color" style="    text-align: center;padding-top: 15px; font-size: 20px;text-transform: uppercase;">
+                        <p>TOP BRANDS</p>
+                    </div>  
+                  </div><!--.card-body-->
+      </div><!--.card-->
+  
+    <div class="col-md-12" style="   padding-left: 0px;    margin-bottom: -12px;">
+
+     <div class="card card-news-more">
+          <div class="card-heading bg-image bg-opaque5 sample-bg-image29">
+            
+            <div class="heading-content">
+
+              <span class="headline" style="color:#ff355d;font-weight:bold;">PRADA</span>
+              <button class="btn btn-floating btn-pink toggle-card-news-more"><i class="ion-android-create"></i></button>
+            </div>
+          </div><!--.card-heading-->
+           <div class="card-body">
+            <p>Prada S.p.A. is an Italian luxury fashion house, specializing in leather handbags, travel accessories, shoes, ready-to-wear, perfumes and other fashion accessories, founded in 1913 by Mario Prada.</p>
+          </div><!--.card-body-->
+      </div><!--.card-->
+    </div>
+     <div class="col-md-12" style="   padding-left: 0px;    margin-bottom: -12px;">
+        <div class="card card-news-more">
+          <div class="card-heading bg-image bg-opaque5 sample-bg-image01">
+            <div class="heading-content">
+            
+              <span class="headline"  style="color:#ff355d;font-weight:bold;">ZARA</span>
+              <button class="btn btn-floating btn-pink toggle-card-news-more"><i class="ion-android-create"></i></button>
+            </div>
+          </div><!--.card-heading-->
+          <div class="card-body">
+            <p>Zara is a Spanish clothing and accessories retailer based in Arteixo, Galicia, and founded in 1975 by Amancio Ortega and Rosalía Mera. It is the flagship chain store of the Inditex group, the world's largest apparel retailer. </p>
+          </div><!--.card-body-->
+        </div><!--.card-->
+      </div><!--.col-md-4-->
+
+        <div class="col-md-12" style="   padding-left: 0px;    margin-bottom: -12px;">
+        <div class="card card-news-more">
+          <div class="card-heading bg-image bg-opaque5 sample-bg-image02">
+            <div class="heading-content">
+             
+              <span class="headline" style="color:#ff355d;font-weight:bold; ">LOUIS VUITTON</span>
+              <button class="btn btn-floating btn-pink toggle-card-news-more"><i class="ion-android-create"></i></button>
+            </div>
+          </div><!--.card-heading-->
+          <div class="card-body">
+            <p>LV is a French fashion house founded in 1854 by Louis Vuitton. The label's LV monogram appears on most of its products, ranging from luxury trunks and leather goods to ready-to-wear, shoes, watches, jewelry, accessories, sunglasses and books. </p>
+          </div><!--.card-body-->
+        </div><!--.card-->
+      </div><!--.col-md-4-->
+   
+</div>
+ </div><!--.row-->
+  
+ </div>  
+ <% else %>
+<div class="one-page">
+  <div class="header">
+    <div class="container">
+
+      <div class="logo">
+       <h5 style="color:  #ff355d;font-size: 18px; font-weight: initial;">VOGUE PARADIZE</h5>
+      </div><!--.logo-->
+
+      <!--
+      * data-nav-link attribute is necessary for data-anchor links.
+      * data-anchor="slide1" attribute is useful when user clicks the data-nav-link, the window moves the related slide.
+      -->
+      <div class="animated-selector">
+        <ul class="navigation">
+          <li data-anchor="slide1" data-nav-link class="hover-color">WHAT WE PROVIDE</li>
+          <li data-anchor="slide2" data-nav-link class="hover-color">VIDEOS</li>
+          <li data-anchor="slide3" data-nav-link class="hover-color">SOCIAL NETWORK</li>
+          <li data-anchor="slide4" data-nav-link class="hover-color">AMBASSADERS</li>
+          <li data-anchor="slide5" data-nav-link class="hover-color">SIGN UP</li>
+        </ul>
+        <div class="selector"></div>
+      </div><!--.animated-selector-->
+
+      <div class="btn-action">
+        <%= link_to "SIGN IN", "#login", "data-toggle" => "modal", :class => 'btn btn-indigo', :target => "_blank"%>
+      </div><!--.btn-action-->
+      <div class="hamburger-btn"></div><!--.hamburger-btn-->
+    </div><!--.container-->
+  </div><!--.header-->
+
+  <!--
+  * Each slide divs can be combined with these classes
+
+  ** Material colors: such as bg-pink, bg-indigo, bg-teal etc.
+  ** bg-image: you just need to write inline css style in order to path to image.
+  ** bg-image-with-shadow: same for bg-image class but in this time background-gradient floats the image.
+  ** bg-pattern: same for the bg-image but in this time the pattern will be repeated for background.
+
+  * data-nav="remove" attribute hides the active navigation border when this slide in viewport.
+  -->
+  <div class="slide bg-image" data-nav="remove" style="background-image: url('/assets/frontend-img/blur1.jpg');">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9">
+          <h1 class="text-indigo text-color text-light-shadow">To be in Vogue has to mean <span data-typer-targets="YOURSELF,STANDARD,SLAY"> VOGUE</span><br> It's a validation.</h1>
+          <p class="caption text-light-shadow">So many women just don't know how great they really are. They come to us all vogue outside and vague on the inside!</p>
+        </div><!--.col-->
+      </div><!--row-->    
+ 
+
+     <!--  <div class="row">
+        <div class="col-md-12">
+          <ul class="store-list">
+            <li><a href="javascript:;"><img src="/assets/frontend-img/on-appstore.png" alt=""></a></li>
+            <li><a href="javascript:;"><img src="/assets/frontend-img/on-googleplay.png" alt=""></a></li>
+          </ul>
+        </div><!--.col-->
+      <!--.row--> 
+
+    </div><!--.container-->
+    <a class="btn btn-large btn-floating btn-indigo btn-next btn-next-center" data-anchor="slide1" data-nav-link><i class="ion-chevron-down"></i></a>
+
+  </div><!--.slide-hero-->
+
+  <!--
+  * data-nav="slide1" attribute is an identifier for data-nav-links.
+  -->
+  <div class="slide" data-nav="slide1">
+
+    <div class="container">
+
+      <div class="slide-image-horizontal hide-on-mobile" data-bottom-top="left:-200px" data-center="left:50px" style="left: 22px;"><img src="/assets/frontend-img/second.jpg" alt=""></div><!--.slide-image-->
+
+      <div class="row">
+        <div class="col-md-6 col-md-offset-6">
+        <div style="padding-left: 20px;">
+          <h2 class="text-black">WHAT WE PROVIDE</h2>
+          <p class="grey-color">Collaboratively administrate empowered markets via plug-and-play networks.</p>
+          <ul class="list-vertical">
+            <li>
+              <div class="list-icon text-indigo">
+                <i class="ion-tshirt-outline"></i>
+              </div><!--.list-icon-->
+              <div class="list-info">
+                <h4 class="text-indigo">BLOG</h4>
+                <span>Dynamically procrastinate B2C users after installed base benefits.</span>
+              </div><!--.list-info-->
+            </li>
+            <li>
+              <div class="list-icon text-green">
+                <i class="fa fa-heart"></i>
+              </div><!--.list-icon-->
+              <div class="list-info">
+                <h4 class="text-green">STORIES</h4>
+                <span>Dramatically visualize customer directed convergence without revolutionary ROI.</span>
+              </div><!--.list-info-->
+            </li>
+            <li>
+              <div class="list-icon text-red">
+                <i class="ion-bag"></i>
+              </div><!--.list-icon-->
+              <div class="list-info">
+                <h4 class="text-red">INSPIRE</h4>
+                <span>Efficiently unleash cross-media information without cross-media value.</span>
+              </div><!--.list-info-->
+            </li>
+          </ul>
+        </div> 
+        </div><!--.col-->
+      </div><!--.row-->
+
+      <a class="btn btn-large btn-floating btn-pink btn-next btn-next-left background-color" data-anchor="slide2" data-nav-link><i class="ion-chevron-down"></i></a>
+
+    </div><!--.container-->
+
+  </div><!--.slide-->
+
+  <div class="slide bg-light-grey" data-nav="slide2">
+
+    <div class="container">
+
+      <div class=" col-md-6- col-md-offset-6 slide-image-vertical hide-on-mobile" data-bottom-top="    top: -50.4504px;" data-center-bottom="top:100px" style="margin-right: -100px;">
+      <iframe width="560" height="415" src="https://www.youtube.com/embed/KtPv7IEhWRA" frameborder="0" allowfullscreen></iframe>
+      
+      </div><!--.slide-image-->
+
+      <div class="row">
+        <div class="col-md-6">
+          <h2 class="text-black">VIDEOS</h2>
+          <p class="grey-color"></p>
+          <ul class="list-vertical">
+            <li style=" margin-left: -50px;">
+              <div class="list-icon text-deep-purple">
+           
+              </div><!--.list-icon-->
+              <div class="list-info" style="display: inline-flex;">
+                <h4 class="text-deep-purple"><iframe width="150" height="100" src="https://www.youtube.com/embed/f9jRRTB_STA" frameborder="0" allowfullscreen></iframe></h4>
+                <span style="padding: 14px;">Tripple-flip Combo |faux braid hairstyle|</span>
+              </div><!--.list-info-->
+            </li>
+            <li style=" margin-left: -50px;">
+              <div class="list-icon text-teal">
+               
+              </div><!--.list-icon-->
+              <div class="list-info" style="display: inline-flex;">
+                <h4 class="text-teal"><iframe width="150" height="100" src="https://www.youtube.com/embed/BLWhYqCk2QQ" frameborder="0" allowfullscreen></iframe></h4>
+                <span style="padding: 14px;">ULTRA GLAM Special Occasion Makeup! | Lauren Curtis</span>
+              </div><!--.list-info-->
+            </li>
+            <li style=" margin-left: -50px;">
+              <div class="list-icon text-amber">
+              
+              </div><!--.list-icon-->
+              <div class="list-info" style="display: inline-flex;">
+                <h4 class="text-amber"><iframe width="150" height="100" src="https://www.youtube.com/embed/8aXX1Meaxb0" frameborder="0" allowfullscreen></iframe></h4>
+                <span style="padding: 14px;">Nikki and Gabi's back to school OOTD Challenge. </span>
+              </div><!--.list-info-->
+            </li>
+          </ul>
+        </div><!--.col-->
+      </div><!--.row-->
+
+      <a class="btn btn-large btn-floating btn-amber btn-next btn-next-right" data-anchor="slide3" data-nav-link><i class="ion-chevron-down"></i></a>
+
+    </div><!--.container-->
+  </div><!--.slide-->
+
+  <div class="slide bg-image-with-shadow" style="background-image: url('/assets/frontend-img/wallpaper2.jpg'); " data-nav="slide3">
+    <div class="container">
+      <h3 class="text-white text-center">SIGN UP BY SOCIAL NETWORKS</h3>
+      <p class="caption text-white text-center">A social network service is a platform, or site that focuses on facilitating the building of social relations among people.</p>
+
+      <ul class="row list-horizontal white">
+        <li class="col-sm-4" data-bottom-top="top:-50px" data-center="top:0px">
+          <div class="list-icon">
+           
+            <i class="icon-hover fa fa-facebook"></i>
+           
+          </div><!--.list-icon-->
+          <div class="list-info">
+            <h4>FACEBOOK</h4>
+            <span>Collaboratively administrate empowered markets via plug-and-play networks.</span>
+          </div><!--.list-info-->
+        </li>
+        <li class="col-sm-4" data-bottom-top="top:-50px" data-center="top:0px">
+          <div class="list-icon">
+            <i class="icon-hover fa fa-twitter"></i>
+          </div><!--.list-icon-->
+          <div class="list-info">
+            <h4>TWITTER</h4>
+            <span>Dynamically procrastinate B2C users after installed base benefits.</span>
+          </div><!--.list-info-->
+        </li>
+        <li class="col-sm-4" data-bottom-top="top:-50px" data-center="top:0px">
+          <div class="list-icon">
+            <i class="icon-hover fa fa-instagram"></i>
+          </div><!--.list-icon-->
+          <div class="list-info">
+            <h4>INSTAGRAM</h4>
+            <span>Dramatically visualize customer directed convergence without revolutionary ROI.</span>
+          </div><!--.list-info-->
+        </li>
+      </ul>
+
+      <a class="btn btn-large btn-floating btn-teal btn-next btn-next-center background-color" data-anchor="slide4" data-nav-link><i class="ion-chevron-down white-color"></i></a>
+
+    </div><!--.container-->
+  </div><!--.slide-->
+
+  <div class="slide bg-pattern" style="background-image: url('/assets/frontend-img/trail5.jpg');" data-nav="slide4">
+    <div class="container">
+      <h3 class="text-black text-center">AMBASSADERS</h3>
+      <p class="caption text-center">Our company is located in Istanbul, Turkey and London, England.</p>
+
+      <div class="row transform-bug">
+        <div class="col-md-3 col-sm-4 col-xs-12" data-bottom-top="bottom:-100px" data-center="bottom:0px">
+          <div class="card card-user-new">
+            <img src="/assets/frontend-img/index-selena.jpg" class="member-image" alt="">
+            <div class="card-body">
+              
+              <h6>Selena Gomez</h6>
+              <ul class="social-links list-inline">
+                <li><a href="#"><i class="fa fa-github"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+              </ul>
+            </div><!--.card-body-->
+          </div><!--.card-->
+        </div><!--.col-md-3-->
+
+        <div class="col-md-3 col-sm-4 col-xs-12" data-bottom-top="bottom:-200px" data-center="bottom:0px">
+          <div class="card card-user-new">
+            <img src="/assets/frontend-img/index-emaa1.jpg" class="member-image" alt="">
+            <div class="card-body">
+
+              <h6>Emma Watson</h6>
+              <ul class="social-links list-inline">
+                <li><a href="#"><i class="fa fa-github"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+              </ul>
+            </div><!--.card-body-->
+          </div><!--.card-->
+        </div><!--.col-md-3-->
+
+        <div class="col-md-3 col-sm-4 col-xs-12" data-bottom-top="bottom:-200px" data-center="bottom:0px">
+          <div class="card card-user-new">
+            <img src="/assets/frontend-img/index-emma.jpg" class="member-image" alt="">
+            <div class="card-body">
+              
+              <h6>Jennifer Lawrence</h6>
+              <ul class="social-links list-inline">
+                <li><a href="#"><i class="fa fa-github"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+              </ul>
+            </div><!--.card-body-->
+          </div><!--.card-->
+        </div><!--.col-md-3-->
+
+        <div class="col-md-3 col-sm-4 col-xs-12" data-bottom-top="bottom:-100px" data-center="bottom:0px">
+          <div class="card card-user-new">
+            <img src="/assets/frontend-img/index-jolienew.jpg" class="member-image" alt="">
+            <div class="card-body">
+            
+              <h6>Angelina Jolie</h6>
+              <ul class="social-links list-inline">
+                <li><a href="#"><i class="fa fa-github"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+              </ul>
+            </div><!--.card-body-->
+          </div><!--.card-->
+        </div><!--.col-md-3-->
+
+      </div><!--.row-->
+
+    </div><!--.container-->
+
+  </div><!--.slide-->
+
+  <div class="slide" data-nav="slide5">
+
+    <div class="container">
+      <h3 class="text-black text-center">Create a New Account</h3>
+     <%= render partial:'devise/registrations/new'%>
+
+    </div><!--.container-->
+
+  </div><!--.slide-->
+
+  <div class="footer bg-black">
+    <div class="container">
+
+      <ul class="social-list">
+        <li><a href="javascript:;" class="facebook"><i class="ion-social-facebook"></i></a></li>
+        <li><a href="javascript:;" class="twitter"><i class="ion-social-twitter"></i></a></li>
+        <li><a href="javascript:;" class="pinterest"><i class="ion-social-github"></i></a></li>
+      </ul>
+
+      <div class="copyright v-text">VOGUE PARADIZE &copy; 2015</div>
+
+    </div><!--.container-->
+  </div><!--.footer-->
+</div>
+<% end %>
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '111444305918054',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
