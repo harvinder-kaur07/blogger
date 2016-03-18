@@ -28,7 +28,7 @@
           <li class="active"><a href="#timeline" data-toggle="tab" class="btn-ripple">Timeline</a></li>
            <li><a href="#about" data-toggle="tab" class="btn-ripple">About</a></li>
            <li><a href="#photos" data-toggle="tab" class="btn-ripple">Photos</a></li>
-            <% if author_signed_in? && @article.author_id == current_author.id %>
+            <% if author_signed_in? && @author.id == current_author.id %>
            <li><a href="#edit" data-toggle="tab" class="btn-ripple">Edit Profile</a></li>
            <% end%>
          </ul>
@@ -41,6 +41,7 @@
       <div class="col-md-12" style="padding-left:10px">
         <div class="tab-content without-border">
           <div id="timeline" class="tab-pane active">
+
             <div class="row masonry">
 
       
@@ -117,6 +118,7 @@
                           </div><!--.timeline-content-->
                      </div><!--.frame-->
                      <% end %>
+                
                     </div><!--.timeline-->
 
                   </div><!--#about_timeline.tab-pane-->
@@ -129,6 +131,7 @@
 
           <div id="photos" class="tab-pane">
              <div class="row image-row">
+            
                <% @author.articles.each do |article| %>
                  <div class="col-md-3 col-sm-3 col-xs-2" style="padding-bottom:8px;padding-right: 4px;padding-left: 4px;">
                     <div class="card card-user-new">
@@ -141,9 +144,10 @@
                      </div><!--.card-->
                    </div><!--.col-md-4-->     
                   <%end %>
+             
            </div><!--.col-->
         </div><!--#photos.tab-pane-->
-          <% if author_signed_in? && @article.author_id == current_author.id %>
+          <% if author_signed_in? && @author.id == current_author.id %>
           <div id="edit" class="tab-pane" style=" padding-left: 5px;">
             <div class="row">
               <%= render partial: 'devise/registrations/edit' %>  

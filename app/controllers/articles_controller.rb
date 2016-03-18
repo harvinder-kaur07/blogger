@@ -57,9 +57,9 @@ end
   def author_profile
 
     @author = Author.find(params[:id])
-    @article = Article.find(params[:id])
-    @comment = Comment.find(params[:id])
-    @articles= Article.all
+    # @article = Article.find(params[:id])
+    # @comment = Comment.find(params[:id])
+    # @articles= Article.all
    
   end
    def check
