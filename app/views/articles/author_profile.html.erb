@@ -51,7 +51,8 @@
                        <%= image_tag article.photo.url(:medium), :class =>"img-responsive index-image"%>
                          <div class="card-body">
                            <h5 ><%= link_to article.title , article_path(article.id), :class =>"t-color no-decor" %></h5>
-                           <h6 style="color: white;font-size: 15px;">comments <%= (@article.comments.size) %></h6>
+
+                           <h6 style="color: white;font-size: 15px;">comments <%= (article.comments.size) %></h6>
                            <ul class="social-links list-inline"style="color: white;font-size: 12px;">
                               <li><%= article.created_at.strftime("%b %d, %Y")%></li>
                           </ul>
@@ -108,9 +109,10 @@
                         <span class="timeline-date"> <%= article.created_at.strftime("%b %d, %Y")%>
                         </span>
                          <span class="text-color right-align" style=" display: inherit;    font-size: 14px;">
-                              <% if author_signed_in? && @article.author_id == current_author.id %>
-                                <%=link_to 'Edit',edit_article_path(@article.id), :class =>"text-color only-hover no-decor padding-10"%> 
-                                <%= link_to 'Delete',article_path(@article), method: :Delete, :class =>"text-color only-hover no-decor" %>
+                              <% if author_signed_in? && article.author.id == current_author.id %>
+                                <%=link_to 'Edit',edit_article_path(article), :class =>"text-color only-hover no-decor padding-10"%> 
+                                <%= link_to 'Delete',article, method: :delete, data: { confirm: 'Are you sure?' } , :class =>"text-color only-hover no-decor" %>
+                                
                                <% end %>
                          </span> 
                           <div class="timeline-content">
