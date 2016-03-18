@@ -115,10 +115,10 @@
                          <%= render partial: 'comments/form' %>
               <% end %>
 <div id="commentf">
-            <% if @article.comments.size > 0 %>       
+                   
 <%= render partial: 'articles/comment', collection: @article.comments.order(:created_at).reverse_order %>
 
-             <% end %>
+            
              </div>
        </div>
      </div>
