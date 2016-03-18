@@ -16,7 +16,7 @@
 								<span style="font-size: 20px;">
 									<%= link_to comment.author.user_name,author_profile_path(@article), :class =>"username" %>   </span>
 								 <span class="small" style="color: grey;font-size: 13px;padding-left: 8px;">
-									<%= distance_of_time_in_words(comment.article.created_at,comment.created_at)%><span style="padding-left: 5px;">ago</span></span>
+									<li class="small"><%="#{time_ago_in_words(comment.created_at)} ago "%></li><span style="padding-left: 5px;">ago</span></span>
 								  <div style=" text-align: right;margin-top: -42px;">
 									 <ul class="inline-list">
 									 <% if author_signed_in? && comment.author_id == current_author.id %>
