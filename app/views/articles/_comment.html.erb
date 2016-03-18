@@ -16,23 +16,24 @@
 								<span style="font-size: 20px;">
 									<%= link_to comment.author.user_name,author_profile_path(@article), :class =>"username" %>   </span>
 								 <span class="small" style="color: grey;font-size: 13px;padding-left: 8px;">
-									<%= distance_of_time_in_words(comment.article.created_at,comment.created_at)%><span style="padding-left: 5px;">ago</span></span>
+									<%= distance_of_time_in_words(comment.article.created_at,comment.created_at)%><span style="padding-left: 5px;">ago</span>
+								</span>
 								  <div style=" text-align: right;margin-top: -42px;">
-									 <ul class="inline-list">
+									<ul class="inline-list">
 									 <% if author_signed_in? && comment.author_id == current_author.id %>
-                                      <a href="<%= edit_article_comment_path(:article_id => @comment.article_id, :id => comment.id)%> ">
-						    		  <li class="fa fa-edit" style="color: #ff355d;    margin-right: -40px;"> </li> </a>
+                                       <a href="<%= edit_article_comment_path(:article_id => @comment.article_id, :id => comment.id)%> ">
+						    		      <li class="fa fa-edit" style="color: #ff355d;    margin-right: -40px;"> 
+						    		       </li>
+						    		   </a>
                                       <li>
                                          <%= link_to '<i "fa fa-trash-o"></i>'.html_safe, article_comment_path(:article_id => comment.article.id, :id => comment.id), method: :delete %>
-										</li>
+									  </li>
                                        <% else %>
 								       <% end %>		
-		                             </ul>
+		                            </ul>
                                   </div>
 					</div>
 				  <div class="comment-body " style="  margin-left: -40px; padding-top: 10px;">
-								
-								<p style=" padding-left: 90px;    padding-bottom: 30px;"><%= comment.body%></p>
-                                  
-							</div>
-                        </div>
+					<p style=" padding-left: 90px;    padding-bottom: 30px;"><%= comment.body%></p> 
+				  </div>
+            </div>
