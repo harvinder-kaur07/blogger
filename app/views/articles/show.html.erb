@@ -116,8 +116,8 @@
               <% end %>
 
             <% if @article.comments.size > 0 %>       
+<%= render partial: 'articles/comment', collection: @article.comments.order(:created_at).reverse_order %>
 
-                        <%= render partial:'articles/comment',collection: @article.comments %>
              <% end %>
        </div>
      </div>
