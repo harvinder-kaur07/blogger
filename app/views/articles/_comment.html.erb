@@ -10,7 +10,7 @@
         <%# else %>
  
         <%# end %> -->
-             <div class="comment" style="background-color: rgba(175, 169, 169, 0.24);padding-top: 28px;padding-right: 64px; padding-bottom: 0px;margin-bottom: 15px;    font-size: 15px;">
+             <div class="comment" id="<%=comment.id%>" style="background-color: rgba(175, 169, 169, 0.24);padding-top: 28px;padding-right: 64px; padding-bottom: 0px;margin-bottom: 15px;    font-size: 15px;">
 					<div class="user-photo" style=" padding-left:45px; padding-right: 40px;"><%= image_tag comment.author.photo.url(:small), :class=>"image-set" %>
 							<span class=" dot-seperator" style=" padding-left: 15px;">
 								<span style="font-size: 20px;">
@@ -24,11 +24,11 @@
 
 								  <div style=" text-align: right;margin-top: -42px;">
 								   <ul class="inline-list">
-									     <% if author_signed_in? && comment.author_id == current_author.id %>
-                                   <a href="<%= edit_article_comment_path(:article_id => @comment.article_id, :id => comment.id)%> ">
-						    	    <li class="fa fa-edit" style="color: #ff355d;"> </li>  </a>
+									     <% if author_signed_in? &&  current_author.id==comment.author_id%>
+                                   
+						    	    <li>  <%= link_to 'Edit', edit_article_comment_path(:article_id=>comment.article.id,:id=>comment.id),:remote=>true %></li>
                                     <li >
-                                         <%= link_to '', article_comment_path(:article_id => comment.article.id, :id => comment.id), method: :delete , :remote=>true,:class=>'fa fa-trash-o trash-color' %>
+                                         <%= link_to 'Delete', article_comment_path(:article_id => comment.article.id, :id => comment.id), method: :delete , :remote=>true %>
                                     </li>
                                        <% else %>
 								       <% end %>		

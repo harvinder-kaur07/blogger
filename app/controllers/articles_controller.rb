@@ -43,6 +43,7 @@ end
 
 
    def edit
+    
     @article=Article.find(params[:id])
     
   end
