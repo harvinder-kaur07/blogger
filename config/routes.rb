@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
    
   # devise_for :views
-  devise_for :authors 
+  devise_for :authors, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
  #get 'sign_out'=> 'devise/session#destroy'
   get 'author_profile/:id' => 'articles#author_profile', as: :author_profile
   root to:'articles#index'
