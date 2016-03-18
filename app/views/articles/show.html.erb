@@ -114,12 +114,11 @@
               <% if author_signed_in? %>
                          <%= render partial: 'comments/form' %>
               <% end %>
-<div id="commentf">
-            <% if @article.comments.size > 0 %>       
-<%= render partial: 'articles/comment', collection: @article.comments.order(:created_at).reverse_order %>
 
+            <% if @article.comments.size > 0 %>       
+
+                        <%= render partial:'articles/comment',collection: @article.comments %>
              <% end %>
-             </div>
        </div>
      </div>
    </div>

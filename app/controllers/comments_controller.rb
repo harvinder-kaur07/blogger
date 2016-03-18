@@ -44,13 +44,19 @@ def update
 end
 
 def destroy
-	
+	 @author=Author.find(current_author.id)
    	@comment=Comment.find(params[:id])
    	@article=Article.find(params[:article_id])
-    @comment.destroy
-    redirect_to article_path(@comment.article_id)
-     flash.notice= 'You have successfully deleted a comment !!'
+       @comment_id=@comment.id
+
+    if @comment.destroy
+         respond_to do |format|
+      format.js
+      end  
+ 
 end
+end
+
 
 def show  	
   	@comment = Comment.find(params[:id])

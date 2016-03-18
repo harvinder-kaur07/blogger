@@ -347,4 +347,35 @@
   
 
 # </div>
+
+          # <%= image_tag comment.author.photo.url(:small), :class=>"image-set" %>
+          #     <span class=" dot-seperator" style=" padding-left: 15px;">
+          #       <span style="font-size: 20px;">
+          #         <%= link_to comment.author.user_name,author_profile_path(@article), :class =>"username" %>   </span>
+
+          
+          #         <span class="small" style="color: grey;font-size: 13px;padding-left: 8px;">
+          #                            <%="#{time_ago_in_words(comment.created_at)} ago "%></span>
+
+          #        <span class="small" style="color: grey;font-size: 13px;padding-left: 8px;">
+          #         <%="#{time_ago_in_words(comment.created_at)} ago "%></span>
+
+          #         <div style=" text-align: right;margin-top: -42px;">
+          #          <ul class="inline-list">
+          #              <% if author_signed_in? && comment.author_id == current_author.id %>
+          #                          <a href="<%= edit_article_comment_path(:article_id => @comment.article_id, :id => comment.id)%> ">
+          #             <li class="fa fa-edit" style="color: #ff355d;"> </li>  </a>
+          #                           <li >
+          #                                <%= link_to '', article_comment_path(:article_id => comment.article.id, :id => comment.id), method: :delete , :remote=>true,:class=>'fa fa-trash-o trash-color' %>
+          #                           </li>
+          #                              <% else %>
+          #              <% end %>    
+          #                        </ul>
+          #                         </div>
+          # </div>
+          # <div class="comment-body " style="  margin-left: -40px; padding-top: 10px;">
+                
+          #       <p style=" padding-left: 90px;    padding-bottom: 30px;"><%= comment.body%></p>
+          #          </div>
+          # </div>
   
