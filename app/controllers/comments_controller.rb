@@ -7,7 +7,7 @@ def edit
     @comment=Comment.find(params[:id])
     @article=Article.find(params[:article_id])
     respond_to do |format|
-      format.js{render :layout => false}
+      format.js { render :layout=>false }
   end
 end
 
@@ -34,7 +34,7 @@ end
 def update
    @comment = Comment.find(params[:id])
    @comment.update(comment_params)
-   
+   @article= Article.find(params[:article_id])
    # redirect_to article_path(@comment.article_id)
    respond_to do |format|
       format.js
