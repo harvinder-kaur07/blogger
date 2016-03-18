@@ -39,20 +39,36 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
   Paperclip.options[:command_path] = "/usr/local/bin/convert"
-   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-   config.assets.raise_runtime_errors = true
-   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-   config.action_mailer.raise_delivery_errors = true
-   config.action_mailer.delivery_method = :smtp
-   config.action_mailer.default :charset => "utf-8"
+   # General Settings
+  config.app_domain = 'poplify.com'
 
-config.action_mailer.delivery_method = :smtp
- config.action_mailer.smtp_settings = {
-     :address              => "smtp.gmail.com",
-     :port                 => 587,
-      domain:               'poplify.com',
-     :user_name            => 'harvinderkaur@poplify.com',
-     :password             => 'gurprince@kaur',
-     :authentication       => 'plain',
-     :enable_starttls_auto => true  }
+  # Email
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.default_url_options = { host: config.app_domain }
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.gmail.com', 
+    port: '587',
+    enable_starttls_auto: true,
+    user_name: 'homeshchopra@poplify.com',
+    password: 'kulerigohana1111',
+    authentication: :plain,
+    domain: 'poplify.com'
+  }
+#    config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+#    config.assets.raise_runtime_errors = true
+#    config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+#    config.action_mailer.raise_delivery_errors = true
+#    config.action_mailer.delivery_method = :smtp
+#    config.action_mailer.default :charset => "utf-8"
+
+# config.action_mailer.delivery_method = :smtp
+#  config.action_mailer.smtp_settings = {
+#      :address              => "smtp.gmail.com",
+#      :port                 => 587,
+#       domain:               'poplify.com',
+#      :user_name            => 'harvinderkaur@poplify.com',
+#      :password             => 'gurprince@kaur',
+#      :authentication       => 'plain',
+#      :enable_starttls_auto => true  }
 end

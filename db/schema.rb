@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160223183916) do
+ActiveRecord::Schema.define(version: 20160318093454) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title",              limit: 255
@@ -22,9 +22,11 @@ ActiveRecord::Schema.define(version: 20160223183916) do
     t.string   "photo_content_type", limit: 255
     t.integer  "photo_file_size",    limit: 4
     t.datetime "photo_updated_at"
+    t.integer  "article_id",         limit: 4
     t.integer  "author_id",          limit: 4
   end
 
+  add_index "articles", ["article_id"], name: "index_articles_on_article_id", using: :btree
   add_index "articles", ["author_id"], name: "index_articles_on_author_id", using: :btree
 
   create_table "authors", force: :cascade do |t|
@@ -62,6 +64,16 @@ ActiveRecord::Schema.define(version: 20160223183916) do
   add_index "comments", ["article_id"], name: "index_comments_on_article_id", using: :btree
   add_index "comments", ["author_id"], name: "index_comments_on_author_id", using: :btree
 
+  create_table "identities", force: :cascade do |t|
+    t.integer  "author_id",  limit: 4
+    t.string   "provider",   limit: 255
+    t.string   "uid",        limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "identities", ["author_id"], name: "index_identities_on_author_id", using: :btree
+
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id",     limit: 4
     t.integer  "article_id", limit: 4
@@ -96,9 +108,11 @@ ActiveRecord::Schema.define(version: 20160223183916) do
   add_index "views", ["email"], name: "index_views_on_email", unique: true, using: :btree
   add_index "views", ["reset_password_token"], name: "index_views_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "articles", "articles"
   add_foreign_key "articles", "authors"
   add_foreign_key "comments", "articles"
   add_foreign_key "comments", "authors"
+  add_foreign_key "identities", "authors"
   add_foreign_key "taggings", "articles"
   add_foreign_key "taggings", "tags"
 end
