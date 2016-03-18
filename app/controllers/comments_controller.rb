@@ -26,8 +26,14 @@ def create
      @comment= Comment.new(comment_params)
      @comment.article_id = params[:article_id]
      @comment.author_id = current_author.id 
-     @comment.save
-     redirect_to article_path(@comment.article_id)
+       @author=Author.find(current_author.id)
+     if @comment.save
+     
+       @article=Article.find(params[:article_id]) 
+  respond_to do |format|
+        format.js
+      end
+    end
 end 
 
 def update

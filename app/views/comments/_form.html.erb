@@ -17,7 +17,7 @@
     <%#= f.submit 'Submit',:class =>"comment-button"%>
   </p>
  </center> -->
- <%= form_for [@article, @comment] do |f| %>
+ <%= form_for [@article, @comment],:remote=>true do |f| %>
   
  <div class="input-group">
         <div class="inputer">
