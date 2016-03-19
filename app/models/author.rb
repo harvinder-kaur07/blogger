@@ -50,6 +50,7 @@ TEMP_EMAIL_PREFIX = 'change@me'
           #username: auth.info.nickname || auth.uid,
           email: email ? email : "#{TEMP_EMAIL_PREFIX}-#{auth.uid}-#{auth.provider}.com",
           password: Devise.friendly_token[0,20]
+   
         )
         # author.skip_confirmation!
         user.save!

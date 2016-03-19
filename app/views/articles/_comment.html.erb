@@ -11,14 +11,21 @@
  
         <%# end %> -->
              <div class="comment" style="background-color: rgba(175, 169, 169, 0.24);padding-top: 28px;padding-right: 64px; padding-bottom: 0px;margin-bottom: 15px;    font-size: 15px;">
-					<div class="user-photo" style=" padding-left:45px; padding-right: 40px;"><%= image_tag comment.author.photo.url(:small), :class=>"image-set" %>
+					<div class="user-photo" style=" padding-left:45px; padding-right: 40px;">
+
+                     
+
+
+
+
+
+					<%= image_tag comment.author.photo.url(:small), :class=>"image-set" %>
 							<span class=" dot-seperator" style=" padding-left: 15px;">
 								<span style="font-size: 20px;">
 									<%= link_to comment.author.user_name,author_profile_path(@article), :class =>"username" %>   </span>
 
 					
-									<span class="small" style="color: grey;font-size: 13px;padding-left: 8px;">
-                                     <%="#{time_ago_in_words(comment.created_at)} ago "%></span>
+									
 
 								 <span class="small" style="color: grey;font-size: 13px;padding-left: 8px;">
 									<%="#{time_ago_in_words(comment.created_at)} ago "%></span>

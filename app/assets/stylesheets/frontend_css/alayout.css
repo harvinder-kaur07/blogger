@@ -12649,8 +12649,8 @@ button.toast-close-button {
           transition: all 280ms cubic-bezier(0.35, 0, 0.25, 1);
 }
 .header .animated-selector .selector.initialised {
-  background-color:  #ff355d!important;
-  height: 3px;
+  background-color:  none!important;
+  height: none;
 }
 .header .navigation {
   position: relative;

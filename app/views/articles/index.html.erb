@@ -71,7 +71,7 @@
              <% if author_signed_in? %>
                 <%= link_to "Sign out", destroy_author_session_path(), :method => :delete ,:class =>"name-index"%>
              <% else %>
-             <%= link_to "SIGN UP", new_author_registration_path(),:class =>"sign name-index" %>  
+            
             <% end %>  
 
           </ol>
@@ -313,16 +313,17 @@
 </div>
    <div class=" row no-margin" style="backgound-color:grey;">
       <div class="col-md-12" style="background-color: #5d5d5d;">
-         <div class="col-md-3" style=" padding-top: 150px; margin-right: -70px;">
-            <div class="col-md-6" >
-               <img class="img-responsive" src="/assets/logovogue.png" style=" width: 100%;margin-left: 30px;">
-            
-             <div class="social" style=" padding-bottom: 70px;">
+         <div class="col-md-3" style=" padding-top: 150px;">
+            <div class="col-md-12" >
+               <img class="img-responsive" src="/assets/logovogue.png" style=" width: 100%;">
+               <div style=" text-align: center;">
+                <div class="social">
                   <i class="fa fa-lg fa-facebook fb"></i>
                   <i class="fa fa-lg fa-twitter twi"></i>
                   <i class="fa fa-lg fa-google-plus goo"></i>
                   <i class="fa fa-lg fa-instagram insta"></i>
-             </div>
+               </div>
+              </div>
             </div>
            
          </div>
@@ -342,7 +343,7 @@
 
          </div>
 
-         <div class="col-md-3" style="padding-top:20px;padding-bottom: 20px;    padding-left: 40px;">
+         <div class="col-md-3" style="padding-top:20px;padding-bottom: 20px;text-align:center;">
          <div>
        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-version="6" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; ">
        <div style="padding:8px;"> 
@@ -388,7 +389,7 @@
           <li data-anchor="slide2" data-nav-link class="hover-color">VIDEOS</li>
           <li data-anchor="slide3" data-nav-link class="hover-color">SOCIAL NETWORK</li>
           <li data-anchor="slide4" data-nav-link class="hover-color">AMBASSADERS</li>
-          <li data-anchor="slide5" data-nav-link class="hover-color">SIGN UP</li>
+          <li data-anchor="slide5" data-nav-link  style=" margin-left: 160px;background-color: #ff355d;padding-top: 3px;padding-bottom: 6px; border-radius: 3px;color: white;font-size: 18px;font-weight: 400;" class="index-btn-color">SIGN UP</li>
         </ul>
         <div class="selector"></div>
       </div><!--.animated-selector-->
