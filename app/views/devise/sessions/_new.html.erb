@@ -40,8 +40,8 @@
      </div>
 
    <div class="fbsign">
-           <span><a href="https://www.facebook.com/" class="btn btn-info" role="button"  style="background-color:#3a5795;color:white; border: 0px;font-size:20px;  border-radius: 4px;">facebook</a></span>
-         
+           <!-- <span><a href="<%link_to '',author_omniauth_authorize_path(:facebook)%>" class="btn btn-info" role="button"  style="background-color:#3a5795;color:white; border: 0px;font-size:20px;  border-radius: 4px;">facebook</a></span> -->
+         <%=link_to "facebook",author_omniauth_authorize_path(:facebook),:class=>'btn btn-info'%>
            <span> <a href="https://twitter.com/" class="btn btn-info" role="button" style="background-color: #66ccff;color:white; border: 0px; font-size:20px;  border-radius: 4px;">twitter</a></a></span>
          </div>
 

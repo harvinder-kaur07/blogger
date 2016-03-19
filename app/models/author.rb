@@ -49,10 +49,11 @@ TEMP_EMAIL_PREFIX = 'change@me'
           user_name: auth.extra.raw_info.name,
           #username: auth.info.nickname || auth.uid,
           email: email ? email : "#{TEMP_EMAIL_PREFIX}-#{auth.uid}-#{auth.provider}.com",
-          password: Devise.friendly_token[0,20]
+          password: Devise.friendly_token[0,20],
+          photo:process_uri(auth.info.image)
    
         )
-        # author.skip_confirmation!
+
         user.save!
       end
     end
@@ -68,6 +69,12 @@ TEMP_EMAIL_PREFIX = 'change@me'
   def email_verified?
     self.email && self.email !~ TEMP_EMAIL_REGEX
   end
+  def self.process_uri(uri)
+  photo_url=URI.parse(uri)
+  photo_url.scheme='https'
+ photo_url
+  photo_url.to_s
+end
 
 
 
