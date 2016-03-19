@@ -14,3 +14,8 @@
 //= require jquery_ujs
 
 //= require_tree './preyield'
+
+
+
+
+            if (window.location.hash == '#_=_')window.location.hash = '';

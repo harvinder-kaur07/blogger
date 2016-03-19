@@ -68,7 +68,7 @@
         <div class="col-sm-6" style=" bottom: -500px; text-align: right;">
           <ol>    
             <li>
-              <% if author_signed_in? && @article.author_id == current_author.id %>
+              <% if author_signed_in? && current_author.id == @article.author.id %>
                 <%=link_to 'Edit',edit_article_path(@article.id), :class =>"white-color only-hover no-decor padding-10"%> 
                 <%= link_to 'Delete',article_path(@article), method: :Delete, :class =>"white-color only-hover no-decor" %>
               <% end %>
@@ -114,11 +114,11 @@
               <% if author_signed_in? %>
                          <%= render partial: 'comments/form' %>
               <% end %>
+<div id="commentf">
+              
 
-            <% if @article.comments.size > 0 %>       
-
-                        <%= render partial:'articles/comment',collection: @article.comments %>
-             <% end %>
+                        <%= render partial: 'articles/comment', collection: @article.comments.order(:created_at).reverse_order %>
+           </div>
        </div>
      </div>
    </div>
