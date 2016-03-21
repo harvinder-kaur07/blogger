@@ -9,7 +9,7 @@
           <div class="form-group">
              <div class="inputer floating-label">
                  <div class="input-wrapper">
-                       <%= f.text_field :user_name,:Class=>"form-control", :type =>"text", :id => "exampleInput1" %>
+                       <%= f.text_field :user_name,:Class=>"form-control", :type =>"text", :id => "exampleInput1" ,:required=>'true'%>
                     <label for="exampleInput1">User Name</label>
                  </div>
               </div>
@@ -19,7 +19,7 @@
           <div class="form-group">
              <div class="inputer floating-label">
                  <div class="input-wrapper">
-                          <%= f.email_field :email, autofocus: true,:class => "form-control", :id => "exampleInput1"  %>
+                          <%= f.email_field :email, autofocus: true,:class => "form-control", :id => "exampleInput1",:required=>'true'  %>
                     <label for="exampleInput1">Email Address</label>
                  </div>
               </div>
@@ -31,7 +31,7 @@
           <div class="form-group">
              <div class="inputer floating-label">
                  <div class="input-wrapper">
-                        <%= f.password_field :password, autocomplete: "off", :id => "exampleInput1" ,:class => "form-control"  %>
+                        <%= f.password_field :password, autocomplete: "off", :id => "exampleInput1" ,:class => "form-control",:required=>'true'  %>
                     <label for="exampleInput1">Password</label>
                  </div>
               </div>
@@ -41,14 +41,14 @@
           <div class="form-group">
              <div class="inputer floating-label">
                  <div class="input-wrapper">
-                      <%= f.password_field :password_confirmation, autocomplete: "off",:class => "form-control", :id => "exampleInput1"   %>
+                      <%= f.password_field :password_confirmation, autocomplete: "off",:class => "form-control", :id => "exampleInput1",:required=>'true'  %>
                     <label for="exampleInput1">Confirm Password</label>
                  </div>
               </div>
            </div><!--.form-group-->
         </div><!--.col--> 
     
-   
+
         
     
         <div class="row">
