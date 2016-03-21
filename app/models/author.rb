@@ -3,8 +3,8 @@ class Author < ActiveRecord::Base
 	has_many :comments, :dependent=> :destroy
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  
-
+  validates :user_name,:uniqueness=>'true'
+ validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create,:uniqueness=>'true'
         
          has_attached_file :photo, :styles => { medium: "300x300#",small: "100x100#", thumb: "100x100#" }
 
