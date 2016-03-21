@@ -185,7 +185,7 @@ background:white;
 {
     padding-left: 20px;
 }
-<<<<<<< HEAD
+
 /*flash*/
 .alert-error {
     background-color: #f2dede;
@@ -214,6 +214,7 @@ background:white;
     color: #468847;
     text-align: left;
  }
+
 /* Social Login Buttons */
 #loginHead {
   position: absolute;
@@ -229,7 +230,7 @@ background:white;
 #orSeparator {
   position: absolute;
   top: 50px;
-  left: 100px;
+  left: 60px;
   height: 115px;
   width: 60px;
 }
@@ -238,14 +239,14 @@ background:white;
   position: absolute;
   top: 0px;
   left: 30px;
-  height: 115px;
+  height: 170px;
   width: 3px;
   background-color: #666;
 }
 
 #or {
   position: absolute;
-  top: 121px;
+  top: 175px;
   left: 12px;
   width: 40px;
   height: 16px;
@@ -260,9 +261,9 @@ background:white;
 
 #socialSeparatorBottom {
   position: absolute;
-  top: 160px;
+  top: 210px;
   left: 30px;
-  height: 130px;
+  height: 170px;
   width: 3px;
   background-color: #666;
 }
@@ -300,31 +301,27 @@ background:white;
     cursor: pointer;
     display: block;
     float: left;
-    top: 40px;
+    top: 65px;
     left: 0px;
     height: 50px;
     position: absolute;
     text-align: left;
-    text-decoration: none solid rgb(68, 68, 68);
+   
     text-shadow: rgb(255, 255, 255) 0px 1px 0px;
     vertical-align: middle;
     white-space: nowrap;
     width: 290px;
     background: rgba(0, 0, 0, 0) -webkit-linear-gradient(rgb(86, 120, 188), rgb(49, 74, 123)) repeat scroll 0% 0% / auto padding-box border-box;
     background: rgba(0, 0, 0, 0) linear-gradient(rgb(86, 120, 188), rgb(49, 74, 123)) repeat scroll 0% 0% / auto padding-box border-box;
-    border-top: 1px solid rgb(49, 74, 123);
-    border-right: 1px solid rgb(42, 64, 105);
-    border-bottom: 1px solid rgb(42, 64, 105);
-    border-left: 1px solid rgb(42, 64, 105);
+  
     -moz-border-radius: 8px;
-    -webkit-border-radius: 8px;
-    border-radius: 8px;
     font: normal normal 16px/normal 'Helvetica Neue', Helvetica, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, 'ＭＳ Ｐゴシック', arial, sans-serif;
     font-size: 16px;
     margin: 0px;
     outline: rgb(68, 68, 68) none 0px;
     overflow: hidden;
     padding: 10px 18px;
+    border:none!important;
 }
 
 #fbname {
@@ -374,12 +371,12 @@ background:white;
     cursor: pointer;
     display: block;
     float: left;
-    top: 120px;
+    top: 165px;
     left: 0px;
     height: 50px;
     position: absolute;
     text-align: left;
-    text-decoration: none solid rgb(68, 68, 68);
+   
     text-shadow: rgb(255, 255, 255) 0px 1px 0px;
     vertical-align: middle;
     white-space: nowrap;
@@ -387,19 +384,15 @@ background:white;
     background-color: #DD4B39;
     background: -webkit-linear-gradient(#DD4B39,#D14836);
     background: linear-gradient(#DD4B39,#D14836);
-    border-top: 1px solid rgb(230, 88, 88);
-    border-right: 1px solid rgb(227, 66, 66);
-    border-bottom: 1px solid rgb(227, 66, 66);
-    border-left: 1px solid rgb(227, 66, 66);
-    -moz-border-radius: 8px;
-    -webkit-border-radius: 8px;
-    border-radius: 8px;
+   
+   
     font: normal normal 16px/normal 'Helvetica Neue', Helvetica, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, 'ＭＳ Ｐゴシック', arial, sans-serif;
     font-size: 16px;
     margin: 0px;
     outline: rgb(68, 68, 68) none 0px;
     overflow: hidden;
     padding: 10px 18px;
+    border:none!important;
 }
 
 #gpname {
@@ -449,7 +442,7 @@ background:white;
     cursor: pointer;
     display: block;
     float: left;
-    top: 200px;
+    top: 265px;
     left: 0px;
     height: 50px;
     position: absolute;
@@ -460,24 +453,16 @@ background:white;
     white-space: nowrap;
     width: 290px;
     background-color: #3fa7d0;
-  background: -webkit-linear-gradient(#5fbee4, #2091bd);
-  background: linear-gradient(#5fbee4, #2091bd);
-  border: 1px solid #1c82a7;
-  border-top-color: #2091bd;
-  text-shadow: 0 1px #ffffff;
-  border-top: 1px solid rgb(32, 145, 189);
-    border-right: 1px solid rgb(28, 130, 167);
-    border-bottom: 1px solid rgb(28, 130, 167);
-    border-left: 1px solid rgb(28, 130, 167);
-    -moz-border-radius: 8px;
-    -webkit-border-radius: 8px;
-    border-radius: 8px;
+    background: -webkit-linear-gradient(#5fbee4, #2091bd);
+    background: linear-gradient(#5fbee4, #2091bd);
     font: normal normal 16px/normal 'Helvetica Neue', Helvetica, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, 'ＭＳ Ｐゴシック', arial, sans-serif;
     font-size: 16px;
     margin: 0px;
     outline: rgb(68, 68, 68) none 0px;
     overflow: hidden;
     padding: 10px 18px;
+    border:none!important;
+
 }
 
 #twtrname {

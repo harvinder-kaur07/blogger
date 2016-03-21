@@ -378,4 +378,16 @@
           #       <p style=" padding-left: 90px;    padding-bottom: 30px;"><%= comment.body%></p>
           #          </div>
           # </div>
-  
+          # photo upload
+  #         <!--  <div class="row">
+  #       <div class="col-md-6 col-xs-12">
+  #         <div class="form-group">
+  #            <div class="inputer floating-label">
+  #                <div class="input-wrapper">
+  #                   <%#= f.file_field :photo ,:class => "form-control", :id => "exampleInput1" %>
+
+  #                </div>
+  #             </div>
+  #          </div><!--.form-group-->
+  #       <!--.col--> 
+  # 
