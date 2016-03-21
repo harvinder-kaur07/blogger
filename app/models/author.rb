@@ -49,9 +49,6 @@ TEMP_EMAIL_PREFIX = 'change@me'
           user_name: auth.extra.raw_info.name,
           #username: auth.info.nickname || auth.uid,
           email: email ? email : auth.info.email,
-          password: Devise.friendly_token[0,20]
-
-          email: email ? email : auth.info.email,
           password: Devise.friendly_token[0,20],
           photo:process_uri(auth.info.image)
 
