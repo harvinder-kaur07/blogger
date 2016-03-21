@@ -6,6 +6,7 @@
     WidgetAudio.single();
     ChartsKnob.init();
     UserPages.profile();
+    FormsValidationsParsley.init();
 
   });
   

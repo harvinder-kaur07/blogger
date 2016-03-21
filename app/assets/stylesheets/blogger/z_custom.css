@@ -428,3 +428,17 @@ i:hover {
 {
   font-size: 14px!important;
 }
+.index-btn-color:hover
+{
+color: white!important;
+}
+.header .animated-selector .selector.initialised  {
+    background-color: none!important;
+    height: none!important;
+}
+.name-index
+{
+      padding-left: 20px;
+    font-weight: 500;
+    color: white!important;
+}

@@ -71,7 +71,7 @@
              <% if author_signed_in? %>
                 <%= link_to "Sign out", destroy_author_session_path(), :method => :delete ,:class =>"name-index"%>
              <% else %>
-             <%= link_to "SIGN UP", new_author_registration_path(),:class =>"sign name-index" %>  
+            
             <% end %>  
 
           </ol>
@@ -269,7 +269,7 @@
             
             <div class="heading-content">
 
-              <span class="headline" style="color:#ff355d;font-weight:bold;">PRADA</span>
+              <span class="headline" style="color: white;font-weight: 300;">PRADA</span>
               <button class="btn btn-floating btn-pink toggle-card-news-more"><i class="ion-android-create"></i></button>
             </div>
           </div><!--.card-heading-->
@@ -283,7 +283,7 @@
           <div class="card-heading bg-image bg-opaque5 sample-bg-image01">
             <div class="heading-content">
             
-              <span class="headline"  style="color:#ff355d;font-weight:bold;">ZARA</span>
+              <span class="headline"  style="color: white;font-weight: 300;">ZARA</span>
               <button class="btn btn-floating btn-pink toggle-card-news-more"><i class="ion-android-create"></i></button>
             </div>
           </div><!--.card-heading-->
@@ -298,7 +298,7 @@
           <div class="card-heading bg-image bg-opaque5 sample-bg-image02">
             <div class="heading-content">
              
-              <span class="headline" style="color:#ff355d;font-weight:bold; ">LOUIS VUITTON</span>
+              <span class="headline" style="color: white;font-weight: 300; ">LOUIS VUITTON</span>
               <button class="btn btn-floating btn-pink toggle-card-news-more"><i class="ion-android-create"></i></button>
             </div>
           </div><!--.card-heading-->
@@ -313,16 +313,17 @@
 </div>
    <div class=" row no-margin" style="backgound-color:grey;">
       <div class="col-md-12" style="background-color: #5d5d5d;">
-         <div class="col-md-3" style=" padding-top: 150px; margin-right: -70px;">
-            <div class="col-md-6" >
-               <img class="img-responsive" src="/assets/logovogue.png" style=" width: 100%;margin-left: 30px;">
-            
-             <div class="social" style=" padding-bottom: 70px;">
+         <div class="col-md-3" style=" padding-top: 150px;">
+            <div class="col-md-12" >
+               <img class="img-responsive" src="/assets/logovogue.png" style=" width: 100%;">
+               <div style=" text-align: center;">
+                <div class="social">
                   <i class="fa fa-lg fa-facebook fb"></i>
                   <i class="fa fa-lg fa-twitter twi"></i>
                   <i class="fa fa-lg fa-google-plus goo"></i>
                   <i class="fa fa-lg fa-instagram insta"></i>
-             </div>
+               </div>
+              </div>
             </div>
            
          </div>
@@ -342,7 +343,7 @@
 
          </div>
 
-         <div class="col-md-3" style="padding-top:20px;padding-bottom: 20px;    padding-left: 40px;">
+         <div class="col-md-3" style="padding-top:20px;padding-bottom: 20px;text-align:center;">
          <div>
        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-version="6" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; ">
        <div style="padding:8px;"> 
@@ -388,7 +389,7 @@
           <li data-anchor="slide2" data-nav-link class="hover-color">VIDEOS</li>
           <li data-anchor="slide3" data-nav-link class="hover-color">SOCIAL NETWORK</li>
           <li data-anchor="slide4" data-nav-link class="hover-color">AMBASSADERS</li>
-          <li data-anchor="slide5" data-nav-link class="hover-color">SIGN UP</li>
+          <li data-anchor="slide5" data-nav-link  style=" margin-left: 160px;background-color: #ff355d;padding-top: 3px;padding-bottom: 6px; border-radius: 3px;color: white;font-size: 18px;font-weight: 400;" class="index-btn-color">SIGN UP</li>
         </ul>
         <div class="selector"></div>
       </div><!--.animated-selector-->
@@ -546,8 +547,7 @@
       <ul class="row list-horizontal white">
         <li class="col-sm-4" data-bottom-top="top:-50px" data-center="top:0px">
           <div class="list-icon">
-           
-            <i class="icon-hover fa fa-facebook"></i>
+           <%=link_to "",author_omniauth_authorize_path(:facebook),:class=>'icon-hover fa fa-facebook'%>
            
           </div><!--.list-icon-->
           <div class="list-info">
@@ -653,13 +653,44 @@
   </div><!--.slide-->
 
   <div class="slide" data-nav="slide5">
+   <div class="container">
+   <div class="col-md-12">
+     <div class="col-md-5">
+       
+     <h3 class="text-black text-center">SIGN UP</h3>
+        <%= render partial:'devise/registrations/new'%>
+   
+     </div>
+      <div class="col-md-7">
+         <div id="orSeparator">
+            <div id="socialSeparatorTop"></div>
+            <div id="or">or</div>
+            <div id="socialSeparatorBottom"></div>
+         </div>
+      <div id="socialLogin">
+         <div id="socialHead">
+           SIGN UP USING SOCIAL NETWORK
+        </div>
+        <button type="button" id="fblogin">
+          f&nbsp;&nbsp;&nbsp;<em id="fbname"></em>
+        <a href="<%= author_omniauth_authorize_path(:facebook)%> ">
+          <span id="fbtext">Sign In with Facebook</span></a>
+        </button>
+  
+        <button type="button" id="gpluslogin">
+          g+<em id="gpname"></em> 
+          <span id="gptext">Sign In with Google</span>
+        </button>
+  
+        <button type="button" id="twtrlogin">
+          t&nbsp;&nbsp;&nbsp;<em id="twtrname"></em> 
+          <span id="twtrtext">Sign In with Twitter</span>
+        </button>
+      </div>
 
-    <div class="container">
-      <h3 class="text-black text-center">Create a New Account</h3>
-     <%= render partial:'devise/registrations/new'%>
-
-    </div><!--.container-->
-
+     </div><!--  col-md-6 -->
+    </div> <!-- col-md-12 -->
+   </div><!--.container-->
   </div><!--.slide-->
 
   <div class="footer bg-black">
