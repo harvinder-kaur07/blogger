@@ -391,3 +391,105 @@
   #          </div><!--.form-group-->
   #       <!--.col--> 
   # 
+
+
+
+
+
+               # show page
+  # <div class="col-md-12 card card-user-new">
+  #              <%= image_tag @article.photo.url(:medium),:class =>"img-responsive margin-top-40 img-width-set" %>
+               
+  #          </div>
+
+  #          <div class="col-md-12" style="padding-top: 25px;padding-right: 25px;text-align:center;  padding-left: 25px;">
+  #            <h1 style="font-size: 35px;"class=" margin-bottom-40">
+  #               <%= @article.title%>
+  #            </h1>
+  #            <div class="text-center">
+  #               <%= @article.body %>
+  #            </div>
+  #            <div style="text-align:right;  padding-top: 20px;">
+  #               <% @article.tags.each do |tag| %>
+  #                   <%= link_to tag.name,tag_path(tag), :class =>"tag only-hover white-color" %>
+  #               <% end %>
+  #            </div>   
+  #            <div style="padding-top:30px; text-align: left;">
+  #            <span style="font-size: 15px; font-style: italic; color: #a5a5a5;">
+  #                 <%= @article.created_at.strftime("%b %d, %Y")%></span><span style="font-size: 15px;  color:#a5a5a5;font-style: italic;padding-left: 7px; padding-right: 6px;">by</span>
+  #            <span style="font-style: italic;"><%= link_to @article.author.user_name,author_profile_path(@article.author.id), :class =>"text-color only-hover"%></span>  
+  #           </div>
+  #         </div><!--.col-md-12-->
+  #         <div class="full-content " style="margin-left: -30px; margin-right: -30px;">
+  #         <div class="row">
+  #             <div class="col-md-12" style=" padding-left: 40px;padding-right: 40px;">
+  #                 <% if author_signed_in? %>
+  #                        <%= render partial: 'comments/form' %>
+  #                  <% end %>
+  #                <div id="commentf">
+  #                  <%= render partial: 'articles/comment', collection: @article.comments.order(:created_at).reverse_order %>
+  #                </div>
+  #            </div>
+  #        </div>
+  #      </div>
+
+   # footer
+
+#    <div class=" row no-margin" style="backgound-color:grey;">
+#       <div class="col-md-12" style="background-color: #5d5d5d;">
+#          <div class="col-md-3" style=" padding-top: 150px;">
+#             <div class="col-md-12" >
+#                <img class="img-responsive" src="/assets/logovogue.png" style=" width: 100%;">
+#                <div style=" text-align: center;">
+#                 <div class="social">
+#                   <i class="fa fa-lg fa-facebook fb"></i>
+#                   <i class="fa fa-lg fa-twitter twi"></i>
+#                   <i class="fa fa-lg fa-google-plus goo"></i>
+#                   <i class="fa fa-lg fa-instagram insta"></i>
+#                </div>
+#               </div>
+#             </div>
+           
+#          </div>
+#          <div class="col-md-6 white-color" style="padding-top:20px;text-align:center;padding-top: 150px;">
+          
+#                <span class="padding-set padding-set-color">Services</span><span class="color-grey">|</span>
+#                <span class="padding-set padding-set-color">Contact Us</span><span class="color-grey">|</span>
+#                <span class="padding-set padding-set-color">About Us</span><span class="color-grey">|</span>
+#                <span class="padding-set padding-set-color">Shop</span><span class="color-grey">|</span>
+#                <span class="padding-set padding-set-color">We are Hiring</span><br>
+#                <div style="padding-top:25px;">
+#                <span class="padding-set line-footer">TERMS & CONDITIONS</span><span class="color-grey">|</span>
+#                 <span class="padding-set line-footer">SUBMISSION RULES</span><span class="color-grey">|</span>
+#                  <span class="padding-set line-footer">PRIVACY</span><span class="color-grey">|</span>
+#                   <span class="padding-set line-footer">ADVERTISE</span>
+#                   </div>
+
+#          </div>
+
+#          <div class="col-md-3" style="padding-top:20px;padding-bottom: 20px;text-align:center;">
+#          <div>
+#        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-version="6" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; ">
+#        <div style="padding:8px;"> 
+#        <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50.0% 0; text-align:center; width:100%;"> 
+#        <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf//42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB/lQPb79drWOyJVa/DAvg9B/rLB4cC+Nqgdz/TvBbBnr6GBReqn/nRmDgaQEej7WhonozjF+Y2I/fZou/qAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;">
+         
+#        </div>
+#        </div> 
+#        <p style=" margin:8px 0 0 0; padding:0 4px;"> <a href="https://www.instagram.com/p/BDFgUtvR5er/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_blank">Our favourite looks from Day 2 of #AIFW #AW16. Check out the complete collections on Vogue.in</a>
+#        </p> 
+#        <p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">A photo posted by VOGUE India (@vogueindia) on <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2016-03-18T07:29:05+00:00">Mar 18, 2016 at 12:29am PDT</time>
+#        </p>
+#        </div>
+#        </blockquote>
+# <script async defer src="//platform.instagram.com/en_US/embeds.js"></script>
+# <script async defer src="//platform.instagram.com/en_US/embeds.js"></script>
+#          </div>
+#         </div> 
+#       </div> 
+#   </div>
+#   <div class="row no-margin">
+#        <div class="col-md-12" style="text-align:center;background-color:#444;">
+#            <h2 style=" font-size: 15px;padding-top: 15px;font-weight: 500;color: white;">Copyright &copy 2016 All Rights Reserved</h2>
+#        </div>
+#   </div>

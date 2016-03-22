@@ -19,9 +19,8 @@
  </center> -->
  <%= form_for [@article, @comment],:remote=>true do |f| %>
   
- <div class="input-group">
+ <div class="input-group" style="padding-top: 40px; padding-bottom: 40px;">
         <div class="inputer">
-          
              <div class="input-wrapper">
                       <span> <%= f.text_area :body,:rows=>"1" ,:class =>"form-control js-auto-size", :placeholder => "Join the discussion" %>
                       </span>
