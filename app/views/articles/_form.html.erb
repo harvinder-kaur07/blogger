@@ -1,68 +1,74 @@
-
- <%= form_for(@article, html: {multipart: true}) do |f| %>
-  <% @article.errors.full_messages.each do |error| %>
-  <%= error %>
-  <% end %>
- <div class="container" style=" padding-top: 50px;">
-   <div class="row">
-      <div class="col-sm-6"></div><!--.col-->
-         <div class="col-sm-6"style=" text-align: right;">
-           <a href="<%= articles_path()%>" >
-               <div style="color: #ff355d;font-size: 20px;"class="ion-home"></div>
-           </a> 
-         </div><!--.col-->
-       </div><!--.row-->
-
-    <div class="row" style="background-color: white;padding-left: 40px;padding-right: 40px;    margin-right: 20px;">
+<div class="content">
+    <div class="row">
       <div class="col-md-12">
-       <div style="text-align:center;padding-top: 25px;"><h3>Edit Your Story</h3></div>
-          <div class="input-group">
-            <div class="inputer floating-label">
-               <div class="input-wrapper">
-                  <%= f.text_field :title, :class =>"form-control", :id=>"exampleInput1" %>
-                  <label for="exampleInput1">Title</label>
-               </div>
-            </div>
-         </div> 
-        
-         <div class="input-group form-group">
-            <div class="inputer floating-label">
-               <div class="input-wrapper">
-                  <%= f.text_area :body,:class =>"form-control summernote-default", :id=>"exampleInput1"  %>        
-                  <label for="exampleInput1">What's On Your MInd </label>
-               </div>
-            </div>
-         </div> 
-          <div class="input-group">
-            <div class="inputer floating-label">
-               <div class="input-wrapper">
-                  <%= f.text_field :tag_list,:class =>"form-control", :id=>"exampleInput1"%>
-                   <label for="exampleInput1">Tag-List</label>
-               </div>
-            </div>
-         </div> 
+        <div class="panel">
+          <div class="panel-heading">
+            <div class="panel-title "><h3 class="createarticle">Create Article</h3></div>
+          </div><!--.panel-heading-->
+          <div class="panel-body">
+          <%= form_for(@article) do |f| %>
+           <% if @article.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
 
-                  <% if author_signed_in? %> 
-                   <%= f.hidden_field :author_id, :value => current_author.id, :class =>"form-control", :id=>"exampleInput1" %>
-                  <% end %>
+      <ul>
+      <% @article.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-         <div class="input-group">
-            <div class="inputer floating-label">
-               <div class="input-wrapper">
-                  <%= f.file_field :photo %>
-                 </div>
-            </div>
-         </div> 
-  
-         <div class="input-group" style="text-align:center;padding-top: 20px;padding-bottom: 20px;">
-                 <%= f.submit "PUBLISH",:class =>"button-edit" %>
-         </div>
+            <div class="row example-row">
+              <div class="col-md-3">Title</div><!--.col-md-3-->
+              <div class="col-md-9">
 
-        </div>
-      </div>
+               <%=f.text_field :title,:class=>'form-control',:placeholder=>'Title'%>
+              <br>
+
+              </div><!--.col-md-9-->
+              <div class="col-md-3">Description</div><!--.col-md-3-->
+              <div class="col-md-9 ">
+               <%=f.text_area :body,:class=>'summernote form-control ',:placeholder=>'Description'%>
+               <br>
+              </div><!--.col-md-9-->
+               <div class="col-md-3">Tags</div><!--.col-md-3-->
+              <div class="col-md-9">
+
+               <%=f.text_field :tag_list,:class=>'form-control',:placeholder=>'Tags'%>
+               <p>Enter a Comma-separated list of Words to Describe your Content<p><br>
+              
+
+              </div><!--.col-md-9-->
+               <div class="col-md-3">Image</div><!--.col-md-3-->
+              <div class="col-md-9">
+
+               <%=f.file_field  :image%>
+              <br>
+
+              </div><!--.col-md-9-->
+              <div class="col-md-3"></div><!--.col-md-3-->
+              <div class="col-md-9">
+
+               <%=f.submit :class=>'btn btn-success'%>
+              <br>
+
+              </div><!--.col-md-9-->
+            </div><!--.row-->
+
+          </div><!--.panel-body-->
+        </div><!--.panel-->
+        <%end%>
+      </div><!--.col-md-12-->
+    </div><!--.row-->
     </div>
 
-       
-    <% end %>
-
-
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('.summernote').summernote({
+        height: 80,
+        
+        
+      });
+    });
+  </script>

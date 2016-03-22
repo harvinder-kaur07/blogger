@@ -5,9 +5,9 @@ class Article < ActiveRecord::Base
 	belongs_to :author
 
     validates :title, :body, presence: true
-    has_attached_file :photo, styles: { medium: "100x100#", small: "100x100#", thumb: "100x100#" }
+    has_attached_file :photo, styles: { medium: "100x100#", small: "100x100#", thumb: "100x100#" },:processors => [:papercrop]
     validates_attachment_content_type :photo, :content_type => ["image/jpg", "image/jpeg", "image/png"]
-
+crop_attached_file :photo
 
    def tag_list
     self.tags.collect do |tag|

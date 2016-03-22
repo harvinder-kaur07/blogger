@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   # include ArticlesHelper
   before_action :authenticate_author! ,:except => [:index]
 
-     before_action :check,only:[:edit,:create]
+     # before_action :check,only:[:edit,:create]
   def index
 	@articles= Article.all
   end
@@ -65,20 +65,21 @@ end
     # @articles= Article.all
    
   end
-   def check
-        @article = Article.find(params[:id])
-     if current_author.id!=@article.author.id
-        respond_to do |format|
-        format.html { redirect_to article_path, notice: 'You are not authorised.' }
+#    def check
+
+#      if current_author.id!=@article.author.id
+#         respond_to do |format|
+#         format.html { redirect_to article_path, notice: 'You are not authorised.' }
         
-         end
-    end
-end
+#          end
+#     end
+# end
 
 
   def article_params
   params.require(:article).permit(:title, :body, :tag_list, :photo,:author_id)	
  end
+
 end
 
 
