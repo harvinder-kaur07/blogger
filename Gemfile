@@ -15,6 +15,7 @@ gem "paperclip", "~> 4.3"
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'papercrop'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

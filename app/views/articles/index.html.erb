@@ -43,11 +43,11 @@
     <!-- BEGIN ICONS -->
     
   <div class="nav-user">
-     <% if author_signed_in? %>
+     
        <div class="user">
            <%= link_to (image_tag current_author.photo.url(:small)), author_profile_path(current_author.id), :class =>"img-responsive"%>
        </div><!--.user-->
-     <% end %>  
+      
 </div>   <!-- nav-user -->
 
 </div><!--.nav-bar-container-->
@@ -64,15 +64,15 @@
         <div class="col-sm-6" style="padding-right: 54px;">
           <ol class="breadcrumb">
             
-            <% if author_signed_in? %>
+         
                 <%= link_to current_author.user_name, author_profile_path(current_author.id) %>
               
-             <% end %>
-             <% if author_signed_in? %>
+           
+          
                 <%= link_to "Sign out", destroy_author_session_path(), :method => :delete ,:class =>"name-index"%>
-             <% else %>
+             
             
-            <% end %>  
+        
 
           </ol>
         </div><!--.col-->
@@ -222,11 +222,10 @@
                     <div class="only-hover white-color" style="    padding-top: 50px;text-align:center; padding-left: 0px;font-size: 20px;text-transform: uppercase;">
                     <div class="glyphicon glyphicon-plus plus"></div>
                     <div>
-                    <% if author_signed_in? %>
+   
                     <%= link_to "Publish your Story ", new_article_path(), :class =>"only-hover white-color no-decor" %>
-                    <% else %>
                     <%= link_to "Publish your Story ",new_author_session_path(), :class =>"only-hover white-color no-decor" %>
-                    <%end%>
+                    
                     </div>
                     </div>  
                   </div><!--.card-body-->
@@ -371,6 +370,7 @@
   </div>
 
  <% else %>
+
 <div class="one-page">
   <div class="header">
     <div class="container">
@@ -654,18 +654,17 @@
 
   <div class="slide" data-nav="slide5">
    <div class="container">
-   <div class="col-md-12">
-     <div class="col-md-5">
+   <div class="row">
+     <div class="col-md-6">
        
      <h3 class="text-black text-center">SIGN UP</h3>
        
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-<%= devise_error_messages! %>
 
-<div class="col-md-12">
-       <div class="row">
-        <div class="col-md-12 col-xs-12">
+
+
+    
           <div class="form-group">
              <div class="inputer floating-label">
                  <div class="input-wrapper">
@@ -674,10 +673,10 @@
                  </div>
               </div>
            </div><!--.form-group-->
-        </div><!--.col-->
-        </div> <!-- row -->
-        <div class="row">
-         <div class="col-md-12 col-xs-12">
+        
+        
+        
+      
           <div class="form-group">
              <div class="inputer floating-label">
                  <div class="input-wrapper">
@@ -686,10 +685,10 @@
                  </div>
               </div>
            </div><!--.form-group-->
-        </div><!--.col--> 
-        </div>
-     <div class="row">
-        <div class="col-md-12 col-xs-12">
+        
+        
+    
+        
           <div class="form-group">
              <div class="inputer floating-label">
                  <div class="input-wrapper">
@@ -698,10 +697,10 @@
                  </div>
               </div>
            </div><!--.form-group-->
-        </div><!--.col-->
-        </div>
-        <div class="row">
-         <div class="col-md-12 col-xs-12">
+   
+        
+       
+      
           <div class="form-group">
              <div class="inputer floating-label">
                  <div class="input-wrapper">
@@ -710,15 +709,14 @@
                  </div>
               </div>
            </div><!--.form-group-->
-        </div><!--.col--> 
-        </div>
-        <div class="row" style="margin-top: 30px;">
-           <div class="form-group" style="margin-left: 10px;">
+     
+       
+       
+          
               <%= f.submit "SIGN UP", :class => " background-color no-hover btn btn-success pull-right btn-default toastr-notify" %>
-           </div><!--.form-buttons-->
-         </div>  
+          
 
- </div> <!-- col-md-12 -->
+ 
  
 
 
@@ -726,33 +724,30 @@
 <% end %>
    
      </div>
-      <div class="col-md-7">
-         <div id="orSeparator">
-            <div id="socialSeparatorTop"></div>
-            <div id="or">or</div>
-            <div id="socialSeparatorBottom"></div>
-         </div>
-      <div id="socialLogin">
-         <div id="socialHead">
-           SIGN UP USING SOCIAL NETWORK
-        </div>
-        <button type="button" id="fblogin">
-          f&nbsp;&nbsp;&nbsp;<em id="fbname"></em>
-        <a href="<%= author_omniauth_authorize_path(:facebook)%> ">
-          <span id="fbtext">Sign In with Facebook</span></a>
-        </button>
-  
-        <button type="button" id="gpluslogin">
-          g+<em id="gpname"></em> 
-          <span id="gptext">Sign In with Google</span>
-        </button>
-  
-        <button type="button" id="twtrlogin">
-          t&nbsp;&nbsp;&nbsp;<em id="twtrname"></em> 
-          <span id="twtrtext">Sign In with Twitter</span>
-        </button>
-      </div>
+     <div class="col-md-1 yuti">
+     </div>
+      <div class="col-md-5 ">
+    
+        <h3 style="text-align: center" class="kopo">SOCIAL SIGNUP</h3>
+  <br>
+  <div class="col-md-offset-1 col-md-10">
+    <button class="btn btn-block btn-facebook " type="button">
+    <%=link_to "Log In with Facebook",author_omniauth_authorize_path(:facebook),:class=>'frt'%>
+    <span class="pull-left">   <%=link_to "",author_omniauth_authorize_path(:facebook),:class=>'frt fa fa-facebook kkpp'%></span>
+    <span class="bold hj"></span>
+    </button>
+    <br>
+    <button class="btn btn-block btn-twitter " type="button">
+    <span class="pull-left"><i class="fa fa-twitter kkpp"></i></span>
+    <span class="bold hj">Log In with Twitter</span>
+    </button>
+      <br>
+    <button class="btn btn-block aaaa" type="button">
 
+    <span class="pull-left"><i class="fa fa-google-plus kkpp"></i></span>
+    <span class="bold hj">Log In with Google+</span>
+    </button>
+</div>
      </div><!--  col-md-6 -->
     </div> <!-- col-md-12 -->
    </div><!--.container-->
@@ -780,21 +775,3 @@
 
 
 
-
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '111444305918054',
-      xfbml      : true,
-      version    : 'v2.5'
-    });
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
